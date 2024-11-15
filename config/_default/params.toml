@@ -1,13 +1,13 @@
 #################### default parameters ############################
 # favicon module: https://github.com/gethugothemes/hugo-modules/tree/master/images#favicon-implementation
-favicon = "images/favicon.png"
+favicon = "images/frontal-bird-spread-favicon.png"
 # logo module: https://github.com/gethugothemes/hugo-modules/tree/master/images#logo-implementation
-logo = "images/logo.png"
+logo = "images/lumax-logo.png"
 logo_darkmode = "images/logo-darkmode.png"
 # use `px` or `x` with logo_width, example: "100px".
 # Note: logo_width is not work with .svg file
-logo_width = "160px"
-logo_height = "32px"
+logo_width = "140px"
+logo_height = "80px"
 # if logo_webp set false, will not generate WEBP version of logo | default is true
 logo_webp = true
 # logo text will only show when logo is missing.
@@ -36,10 +36,10 @@ enable = false
 preloader = "" # use jpg, png, svg or gif format.
 
 # Navigation button
-[navigation_button]
-enable = true
-label = "get a quote"
-link = "contact"
+#[navigation_button]
+#enable = true
+#label = "get a quote"
+#link = "contact"
 
 # search
 # search module: https://github.com/gethugothemes/hugo-modules/tree/master/search
