@@ -7,7 +7,7 @@ logo_darkmode = "images/lumax-logo.svg"
 # use `px` or `x` with logo_width, example: "100px".
 # Note: logo_width is not work with .svg file
 logo_width = "140px"
-logo_height = "80px"
+#logo_height = "80px"
 # if logo_webp set false, will not generate WEBP version of logo | default is true
 logo_webp = true
 # logo text will only show when logo is missing.
@@ -40,6 +40,8 @@ preloader = "" # use jpg, png, svg or gif format.
 #enable = true
 #label = "get a quote"
 #link = "contact"
+
+
 
 # search
 # search module: https://github.com/gethugothemes/hugo-modules/tree/master/search

@@ -1,1 +1,40 @@
 // Add your own custom styles here
+
+.container {
+    @apply w-full mx-auto px-2;
+  }
+
+.navbar {
+@apply w-full px-4 md:px-6 lg:px-8;
+}
+
+.header .navbar.container {
+@apply max-w-none;
+}  
+
+footer {
+    display: none;
+  }
+
+body {
+@apply bg-slate-100 dark:bg-gray-800;
+}
+
+.header {
+@apply bg-slate-200 dark:bg-gray-800 shadow-md;
+@apply py-1;  /* Adjust the padding value (py-2 = 0.5rem) as needed */
+}
+
+.section .row {
+@apply relative;
+}
+
+.lg\:col-7.md\:col-9.mb-8.text-left {
+@apply absolute z-10 text-white;
+}
+
+.lg\:col-7.md\:col-9.mb-8.text-left h1,
+.lg\:col-7.md\:col-9.mb-8.text-left p,
+.lg\:col-7.md\:col-9.mb-8.text-left a {
+ @apply text-white;
+}

@@ -11,14 +11,30 @@ name = "About"
 url = "/about"
 weight = 2
 
-#[[main]]
-#name = "Elements"
-#url = "/elements"
-#weight = 3
+[[main]]
+name = "Services"
+url = "/services"
+weight = 3
 
-#[[main]]
-#weight = 4
-#name = "Pages"
+[[main]]
+name = "Projects"
+url = "/projects"
+weight = 4
+
+[[main]]
+name = "SalmonVision"
+url = "/projects/salmonvision"
+parent = "Projects"
+
+[[main]]
+name = "Aerial Salmon"
+url = "/projects/aerialsalmon"
+parent = "Projects"
+
+
+# [[main]]
+# weight = 4
+# name = "Pages"
 
 #[[main]]
 #parent = "Pages"
@@ -47,17 +63,17 @@ weight = 2
 
 
 # footer menu
-[[footer]]
-name = "About"
-url = "/about"
-weight = 1
+# [[footer]]
+# name = "About"
+# url = "/about"
+# weight = 1
 
 #[[footer]]
 #name = "Elements"
 #url = "/elements"
 #weight = 2
 
-#[[footer]]
-#name = "Privacy Policy"
-#url = "/privacy-policy"
-#weight = 3
+# [[footer]]
+# name = "Privacy Policy"
+# url = "/privacy-policy"
+# weight = 3
