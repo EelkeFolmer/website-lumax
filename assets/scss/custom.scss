@@ -1,9 +1,54 @@
 // Add your own custom styles here
 
+// .col-12 img {
+//     @apply w-screen object-cover;
+//     position: relative;
+//     left: 50%;
+//     transform: translateX(-50%);
+//    }
+
+// .col-12 img {
+//     @apply w-screen h-screen object-cover m-0;
+//     position: relative;
+//     left: 50%;
+//     transform: translateX(-50%);
+//     max-width: 100vw;
+//    }
+   
+//    .section {
+//     @apply p-0;
+//    }
+   
+//    .container {
+//     @apply p-0 m-0;
+//    }
+
+.col-12 img {
+    display: block;
+    width: 100vw !important;
+    max-width: none !important;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    height:  auto;
+    object-fit: contain;
+  }
+
+
+.section, .container, .row {
+    @apply w-screen max-w-none p-0 m-0;
+   }
+   
+// .col-12 img {
+//     @apply w-screen max-w-none object-cover;
+//     height: auto;
+// }
+
+
 .container {
     @apply w-full mx-auto px-2;
   }
-
+  
 .navbar {
 @apply w-full px-4 md:px-6 lg:px-8;
 }
@@ -38,3 +83,23 @@ body {
 .lg\:col-7.md\:col-9.mb-8.text-left a {
  @apply text-white;
 }
+
+.lg\:col-7.md\:col-9.mb-8.text-left {
+    @apply absolute z-10 text-white top-1/3; 
+  }
+
+.lg\:col-7.md\:col-9.mb-8.text-left p {
+    @apply text-xl md:text-2xl; /* Increases paragraph text size */
+}
+
+// .image-container {
+//     position: relative;
+//     text-align: center;
+//   }
+  
+//   .centered-text {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//   }
