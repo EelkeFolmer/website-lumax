@@ -10,7 +10,7 @@ draft: false
 AI-powered wildlife counting and identification
 Aerial imaging and analysis
 Advanced UAV monitoring of landscapes
-
+Training
 
 
 
