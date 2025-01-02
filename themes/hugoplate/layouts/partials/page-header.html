@@ -1,9 +1,56 @@
-<section>
+<!-- <section>
   <div class="container text-center">
     <div
       class="from-body to-theme-light dark:from-darkmode-body dark:to-darkmode-theme-light rounded-2xl bg-gradient-to-b px-8 py-14">
       <h1>{{ T (printf "%s" (lower .Title)) | default .Title | title }}</h1>
       {{ partial "components/breadcrumb" (dict "Context" . "Class" "mt-6") }}
+    </div>
+    
+    {{ if .Params.banner.image }}
+    <div class="mt-6">
+      <img src="{{ .Params.banner.image }}" alt="{{ .Title }}" class="w-full h-auto object-cover">
+    </div>
+    {{ end }}
+  </div>
+</section> 
+
+<section>
+  <div class="container text-center" 
+       {{ if .Params.banner_background }}
+       style="background-image: url('{{ .Params.banner_background }}'); background-size: cover; background-position: center;"
+       {{ end }}>
+    <div
+      class="from-body to-theme-light dark:from-darkmode-body dark:to-darkmode-theme-light rounded-2xl bg-gradient-to-b px-8 py-14">
+      <h1>{{ T (printf "%s" (lower .Title)) | default .Title | title }}</h1>
+      {{ partial "components/breadcrumb" (dict "Context" . "Class" "mt-6") }}
+    </div>
+  </div>
+</section> 
+
+<section>
+  <div class="container text-center" 
+       {{ if .Params.banner_background }}
+       {{ $image := resources.Get .Params.banner_background }}
+       style="background-image: url('{{ $image.RelPermalink }}'); background-size: cover; background-position: center;"
+       {{ end }}>
+    <div
+      class="from-body to-theme-light dark:from-darkmode-body dark:to-darkmode-theme-light rounded-2xl bg-gradient-to-b px-8 py-14">
+      <h1>{{ T (printf "%s" (lower .Title)) | default .Title | title }}</h1>
+      {{ partial "components/breadcrumb" (dict "Context" . "Class" "mt-6") }}
+    </div>
+  </div>
+</section> -->
+
+<section>
+  <div class="container text-center" 
+       {{ if .Params.banner_background }}
+       {{ $image := resources.Get .Params.banner_background }}
+       style="background-image: url('{{ $image.Permalink }}'); background-size: cover; background-position: center;"
+       {{ end }}>
+    <div
+      class="from-body to-theme-light dark:from-darkmode-body dark:to-darkmode-theme-light rounded-2xl bg-transparant px-4 py-28 mt-4">
+      <h1>{{ T (printf "%s" (lower .Title)) | default .Title | title }}</h1>
+      {{/*  {{ partial "components/breadcrumb" (dict "Context" . "Class" "mt-6") }}  */}}
     </div>
   </div>
 </section>
