@@ -19,7 +19,10 @@ We are specialized in obtaining high-quality aerial data, leveraging deep domain
 
 {{< columns >}}
 {{< column >}}
-<img src="/images/thor_astro.jpg" alt="Thor flying the Astro." class="w-4/4 mx-auto">
+
+<!-- <img src="images/Eelke_s.jpg" alt="xxx" class="w-4/4 mx-auto"> -->
+{{< image src="/images/thor_astro.jpg" caption="" alt="alter-text" height="" width="" position="center" command="fill" option="q100" class="img-fluid" title="image title"  webp="false" >}}
+
 {{< /column >}}
 
 {{< column >}}
