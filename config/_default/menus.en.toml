@@ -13,7 +13,7 @@ weight = 2
 
 [[main]]
 name = "Services"
-url = "/services/services"
+url = "/services"
 weight = 3
 
 [[main]]
@@ -31,6 +31,10 @@ name = "Aerial Salmon"
 url = "/themes/aerialsalmon"
 parent = "Themes"
 
+[[main]]
+name = "Large scale coastal mapping"
+url = "/themes/dronecoast"
+parent = "Themes"
 
 # [[main]]
 # weight = 4

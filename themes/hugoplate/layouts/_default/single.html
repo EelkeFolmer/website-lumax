@@ -1,6 +1,12 @@
 {{ define "main" }}
   {{ partial "page-header" . }}
 
+    
+  {{ if .Params.banner.image }}
+  <div class="page-banner">
+    <img src="{{ .Params.banner.image }}" alt="{{ .Title }}" class="w-full h-auto object-cover">
+  </div>
+  {{ end }}
 
   <section class="section-sm">
     <div class="container">
@@ -14,3 +20,5 @@
     </div>
   </section>
 {{ end }}
+
+

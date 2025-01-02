@@ -1,18 +1,35 @@
 ---
-title: "Aerial Salmon Detection"
+title: ""
 meta_title: ""
 description: ""
 draft: false
-banner: 
-    image: "/images/aerialsalmon_detections2.jpg"
+banner_background: "images/aerialsalmon_banner2.jpg"
 ---
+## Aerial Salmon Detection
 
-A thorough knowledge about the distribution and numbers of spawning Pacific salmon is fundamental to the conservation and management of its populations. Conventional methods to assess salmon escapement (i.e. the proportion of salmon that returns to freshwater to spawn) can be expensive, invasive and labor intensive. 
+A thorough knowledge about the distribution and numbers of spawning Pacific salmon is fundamental to the conservation and management of its populations. Conventional salmon escapement assessment methods are expensive, invasive and labor-intensive. By leveraging cutting-edge technology, we're transforming salmon population monitoring, making it more efficient, accurate, and accessible.
+
+<br>
 
 {{< columns >}}
 {{< column >}}
 
 {{< image src="/images/thor_nitinat.jpg" caption="" alt="alter-text" height="" width="" position="center" command="fill" option="q100" class="img-fluid" title="image title"  webp="false" >}}
+
+{{< /column >}}
+{{< column >}}
+
+Funded by the Pacific Salmon Commission, we've developed a groundbreaking automated salmon counting system that combines aerial mapping with advanced Machine Learning technologies. Our research began with a focused study on Chum salmon in Tranquil Creek in the Clayoquot Sound, where we rigorously evaluated multiple CNN-based modeling approaches. 
+
+{{< /column >}}
+{{< /columns >}}
+
+<br>
+
+{{< columns >}}
+{{< column >}}
+
+The YOLOv8 framework emerged as our most promising solution, delivering exceptional results. In 2024, we significantly expanded our research, collecting data across multiple river systems on Vancouver Island. In 2025 we will focus on refining the detection model and the development of a user-friendly web application for stakeholders.
 
 {{< /column >}}
 {{< column >}}
@@ -25,8 +42,6 @@ A thorough knowledge about the distribution and numbers of spawning Pacific salm
 
 
 
-
-We have developed and tested a workflow based on aerial mapping and Machine Learning to automate the enumeration of salmon. 
 
 
 
