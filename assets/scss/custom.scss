@@ -1,4 +1,10 @@
 // Add your own custom styles here
+.advisory-board {
+  img {
+    width: 25%;
+    height: auto;
+  }
+}
 
 // .col-12 img {
 //     @apply w-screen object-cover;
@@ -35,10 +41,15 @@
   }
 
 
-.section, .container, .row {
-    @apply w-screen max-w-none p-0 m-0;
-   }
+// .section, .container, .row {
+//     @apply w-screen max-w-none p-0 m-0;
+//    }
    
+
+.section, .container, .row {
+    @apply w-screen max-w-7xl mx-auto p-0;
+}
+
 // .col-12 img {
 //     @apply w-screen max-w-none object-cover;
 //     height: auto;
