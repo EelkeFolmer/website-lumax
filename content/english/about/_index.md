@@ -102,6 +102,17 @@ Our multidisciplinary advisory board brings expertise across scientific and tech
     </div>
   </div>
 
+  <!-- Will -->
+  <div style="display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 1rem;">
+    <div class="flex flex-col items-start">
+      {{< image src="images/Will.jpg" class="w-full mb-1" alt="Will Atlas">}}
+      <a href="https://www.linkedin.com/in/william-atlas-0883bba3/"> Will Atlas</a>
+    </div>
+    <div class="pt-6">
+      <p>Senior scientist at the Wild Salmon Center, Oregon, USA.</p>
+    </div>
+  </div>  
+
 
 <hr>
 
