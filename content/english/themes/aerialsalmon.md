@@ -19,6 +19,8 @@ A thorough knowledge about the distribution and numbers of spawning Pacific salm
 {{< /column >}}
 {{< column >}}
 
+####  {.mb-4}
+
 Funded by the Pacific Salmon Commission, we've developed a groundbreaking automated salmon counting system that combines aerial mapping with advanced Machine Learning technologies. Our research began with a focused study on Chum salmon in Tranquil Creek in the Clayoquot Sound, where we rigorously evaluated multiple CNN-based modeling approaches. 
 
 {{< /column >}}
@@ -29,6 +31,7 @@ Funded by the Pacific Salmon Commission, we've developed a groundbreaking automa
 {{< columns >}}
 {{< column >}}
 
+####  {.mb-4}
 The YOLOv8 framework emerged as our most promising solution, delivering exceptional results. In 2024, we significantly expanded our research, collecting data across multiple river systems on Vancouver Island. In 2025 we will focus on refining the detection model and the development of a user-friendly web application for stakeholders.
 
 {{< /column >}}

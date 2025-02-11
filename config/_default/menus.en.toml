@@ -32,12 +32,12 @@ url = "/themes/aerialsalmon"
 parent = "Themes"
 
 [[main]]
-name = "Large scale coastal mapping"
+name = "Large Scale Coastal Mapping"
 url = "/themes/dronecoast"
 parent = "Themes"
 
 [[main]]
-name = "Trout identification"
+name = "Trout Identification"
 url = "/themes/trout-reid"
 parent = "Themes"
 
