@@ -8,7 +8,9 @@ banner_background: "images/mudflat.jpg"
 ## Large Scale Coastal Mapping
 The intertidal coastal zone of the Wadden Sea consists of saltmarshes and adjacent mudflats. The zone is important because of its natural values ​​and because it protects the land against flooding. However, it is threatened by accelerating sea level rise. Knowledge about sedimentation, erosion and the interaction with vegetation is central to gain a better understanding of the growth capacity of the saltmarshes and mudflats.
 
-{{< image src="/images/mudflat_aerial2.png" caption="" alt="alter-text" height="" width="" position="center" command="fill" option="q100" class="img-fluid" title="image title"  webp="false" >}}
+{{< image src="/images/Wierum_MAX_2756.JPG" caption="" alt="alter-text" height="" width="" position="center" command="fill" option="q100" class="img-fluid" title="image title"  webp="false" >}}
+
+<!-- mudflat_aerial2.png -->
 
 <br>
 

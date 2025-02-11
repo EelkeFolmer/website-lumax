@@ -36,6 +36,11 @@ name = "Large scale coastal mapping"
 url = "/themes/dronecoast"
 parent = "Themes"
 
+[[main]]
+name = "Trout identification"
+url = "/themes/trout-reid"
+parent = "Themes"
+
 # [[main]]
 # weight = 4
 # name = "Pages"
