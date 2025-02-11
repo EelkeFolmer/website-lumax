@@ -23,6 +23,7 @@ The intertidal coastal zone of the Wadden Sea consists of saltmarshes and adjace
 {{< /column >}}
 {{< column >}}
 
+####  {.mb-4}
 
 RPAS-based mapping combined with Structure-from-Motion photogrammetry enables the creation of accurate, high-resolution maps and 3D models. Since 2019, we have been collaborating with the University of Twente, Blik van Boven, and ATMOS UAV to conduct large-scale mapping of intertidal zones. Our Marlyn VTOL allows us to survey approximately 600 hectares with a ground sampling distance (GSD) of around 10 millimeters in just 3-4 hours. 
 
