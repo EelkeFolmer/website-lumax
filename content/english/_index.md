@@ -3,7 +3,7 @@
 banner:
   title: "Welcome to Lumax"
   content: "At Lumax, we operate at the cutting edge of biodiversity monitoring, combining aerial technology with artificial intelligence to advance ecological understanding. Our drone-based solutions and AI analytics help organizations monitor and protect valuable ecosystems."
-  image: "/images/landing-cover3_hu_c7abcaf35d3a9428.webp"
+  image: "images/nitinat_aerial.jpg"
   gradient: true
   
   button:
@@ -35,9 +35,9 @@ services:
       label: "Explore AI Tools"
       link: "/themes/salmonvision/"
 hero:
-  title: "Unlocking the Power of Nature"
+  title: "Providing durable solutions"
   content: "Combining drone technology with AI for next-gen ecological monitoring."
-  image: "/images/nitinat_aerial.jpg"
+  image: "/images/mudflat.jpg"
   gradient: true
   button:
     enable: true
