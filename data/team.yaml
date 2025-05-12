@@ -1,0 +1,38 @@
+team:
+  - name: "Eelke Folmer"
+    image: "images/eelke_face.jpg"
+    link: "https://www.linkedin.com/in/eelkefolmer/"
+    email: "eelke@lumax.ai"
+    desc: "Expertise in ecology, statistics, data science, geospatial analytics, drones, photogrammetry, and machine learning."
+
+  - name: "Thor Veen"
+    image: "images/Thorski.jpg"
+    link: "https://www.linkedin.com/in/thorveen/"
+    email: "thor@lumax.ai"
+    desc: "Expertise in evolution, biodiversity monitoring, drones, photogrammetry, statistics, computer vision, and machine learning."
+
+  - name: "Arthur Caillau"
+    image: "images/Arthur.jpg"
+    link: "https://www.linkedin.com/in/acaillau/"
+    desc: "Expertise in computer vision, machine learning, and cloud infrastructure."
+    
+advisors:
+  - name: "Arindam Sinharoy"
+    image: "images/Arindam.jpg"
+    link: "https://www.linkedin.com/in/arindamsinharoy/"
+    desc: "Product & Technical Program Manager at Besi, Austria."
+
+  - name: "Bas Borsje"
+    image: "images/Bas.jpg"
+    link: "https://www.linkedin.com/in/bas-borsje-3754527/"
+    desc: "Associate Professor at University of Twente, Netherlands."
+
+  - name: "Sjoerd Duijns"
+    image: "images/Sjoerd.jpg"
+    link: "https://www.linkedin.com/in/sjoerd-duijns-5175689/"
+    desc: "Senior scientist at Sovon Vogelonderzoek, Netherlands."
+
+  - name: "Will Atlas"
+    image: "images/Will.jpg"
+    link: "https://www.linkedin.com/in/william-atlas-0883bba3/"
+    desc: "Senior scientist at the Wild Salmon Center, Oregon, USA."

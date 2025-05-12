@@ -1,0 +1,54 @@
+{{ define "main" }}
+<section class="section-sm">
+    <div class="container">
+    
+    <div class="col-12 mb-4">
+        <h1 class="mb-4">Team</h3>
+        <p>As a team, we are bound by our love for nature and drive to harness technology for better environmental understanding. Our strength lies in integrating ecological knowledge, professional data capture techniques, and modern analytics to provide unique insights into environmental challenges in an efficient manner.    </p>
+        
+    </div>
+       <div class="row">
+      {{ range site.Data.team.team }}
+        {{ partial "components/team-card" (dict
+            "name" .name
+            "image" .image
+            "link" .link
+            "email" .email
+            "desc" .desc
+            "context" $.Page
+        ) }}
+        {{ end }}
+
+        </div>
+        <div class="col-12 mb-4">
+            <h3 class="mb-4">Advisory Board</h3>
+            <p>Our advisory board consists of a diverse group of experts who provide strategic guidance and insights to help us navigate the complexities of our field.</p>
+        </div>
+        <div class="row">
+        {{ range site.Data.team.advisors }}
+            {{ partial "components/team-card" (dict
+            "name" .name
+            "image" .image
+            "link" .link
+            "desc" .desc
+            ) }}
+        {{ end }}
+        </div>
+
+
+ 
+  <div class="col col-lg-8 mb-4">
+            <h3 class="mb-4">Project partners</h3>
+            <p>Our project partners extend our capabilities through their diverse expertise, field experience, and professional networks. These long-term collaborations enable us to tackle new challenges, access different ecosystems, and connect with key stakeholders across the conservation landscape.</p>
+        </div>
+        <div class="content">
+            <ul>
+                <li><a href="https://www.linkedin.com/in/geert-aarts-6b6b42255/">Geert Aarts</a>, <a href="https://www.wur.nl/nl/onderzoek-resultaten/onderzoeksinstituten/marine-research.htm">Wageningen Marine Research</a></li>
+                <li><a href="https://www.linkedin.com/in/norbertstellaard/">Norbert Stellaard</a>, <a href="https://www.blikvanboven.nl/en/homepage-en/">Blik van Boven</a></li>
+                <li><a href="https://www.linkedin.com/in/sarah-dzimballa-21434a1a4/">Sarah Dzimballa</a>, <a href="https://people.utwente.nl/s.dzimballa">University of Twente, Faculty of Engineering and Technology</a></li>
+            </ul>
+            
+        </div>
+    </div>
+</section>
+{{ end }}

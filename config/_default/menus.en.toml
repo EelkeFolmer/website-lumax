@@ -12,14 +12,19 @@ url = "/about"
 weight = 2
 
 [[main]]
+name = "Team"
+url = "/team"
+weight = 3
+
+[[main]]
 name = "Services"
 url = "/services"
-weight = 3
+weight = 4
 
 [[main]]
 name = "Themes"
 url = "/themes"
-weight = 4
+weight = 5
 
 [[main]]
 name = "SalmonVision"
@@ -40,6 +45,11 @@ parent = "Themes"
 name = "Trout Identification"
 url = "/themes/trout-reid"
 parent = "Themes"
+
+[[main]]
+name = "Contact"
+url = "https://salmonvision.org/contact/"
+weight = 6
 
 # [[main]]
 # weight = 4
@@ -71,18 +81,45 @@ parent = "Themes"
 #url = "/404"
 
 
-# footer menu
-# [[footer]]
-# name = "About"
-# url = "/about"
-# weight = 1
 
-#[[footer]]
-#name = "Elements"
-#url = "/elements"
-#weight = 2
+[[footer]]
+name = "Home"
+url = "/"
+weight = 1
 
-# [[footer]]
-# name = "Privacy Policy"
-# url = "/privacy-policy"
-# weight = 3
+[[footer]]
+name = "About"
+url = "/about"
+weight = 2
+
+[[footer]]
+name = "Team"
+url = "/team"
+weight = 3
+
+[[footer]]
+name = "Services"
+url = "/services"
+weight = 4
+
+[[footer_sub]]
+name = "SalmonVision"
+url = "/themes/salmonvision"
+weight = 1
+
+[[footer_sub]]
+name = "Aerial Salmon"
+url = "/themes/aerialsalmon"
+weight = 2
+
+[[footer_sub]]
+name = "Large Scale Coastal Mapping"
+url = "/themes/dronecoast"
+weight = 3
+
+[[footer_sub]]
+name = "Trout Identification"
+url = "/themes/trout-reid"
+weight = 4
+
+
