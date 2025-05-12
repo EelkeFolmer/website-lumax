@@ -3,7 +3,6 @@ title: "Services"
 meta_title: "services"
 description: ""
 draft: false
-layout: "single"  # Explicitly specify single page layout
 ---
 
 
