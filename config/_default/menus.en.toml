@@ -46,10 +46,10 @@ name = "Trout Identification"
 url = "/themes/trout-reid"
 parent = "Themes"
 
-[[main]]
-name = "Contact"
-url = "https://salmonvision.org/contact/"
-weight = 6
+# [[main]]
+# name = "Contact"
+# url = "https://salmonvision.org/contact/"
+# weight = 6
 
 # [[main]]
 # weight = 4
