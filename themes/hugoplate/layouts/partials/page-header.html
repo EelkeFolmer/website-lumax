@@ -1,9 +1,72 @@
-<section>
-  <div class="container text-center">
+<!-- <section>
+  <div class="container">
     <div
       class="from-body to-theme-light dark:from-darkmode-body dark:to-darkmode-theme-light rounded-2xl bg-gradient-to-b px-8 py-14">
       <h1>{{ T (printf "%s" (lower .Title)) | default .Title | title }}</h1>
       {{ partial "components/breadcrumb" (dict "Context" . "Class" "mt-6") }}
+    </div>
+    
+    {{ if .Params.banner.image }}
+    <div class="mt-6">
+      <img src="{{ .Params.banner.image }}" alt="{{ .Title }}" class="w-full h-auto object-cover">
+    </div>
+    {{ end }}
+  </div>
+</section> 
+
+<section>
+  <div class="container" 
+       {{ if .Params.banner_background }}
+       style="background-image: url('{{ .Params.banner_background }}'); background-size: cover; background-position: center;"
+       {{ end }}>
+    <div
+      class="from-body to-theme-light dark:from-darkmode-body dark:to-darkmode-theme-light rounded-2xl bg-gradient-to-b px-8 py-14">
+      <h1>{{ T (printf "%s" (lower .Title)) | default .Title | title }}</h1>
+      {{ partial "components/breadcrumb" (dict "Context" . "Class" "mt-6") }}
+    </div>
+  </div>
+</section> 
+
+<section>
+  <div class="container" 
+       {{ if .Params.banner_background }}
+       {{ $image := resources.Get .Params.banner_background }}
+       style="background-image: url('{{ $image.RelPermalink }}'); background-size: cover; background-position: center;"
+       {{ end }}>
+    <div
+      class="from-body to-theme-light dark:from-darkmode-body dark:to-darkmode-theme-light rounded-2xl bg-gradient-to-b px-8 py-14">
+      <h1>{{ T (printf "%s" (lower .Title)) | default .Title | title }}</h1>
+      {{ partial "components/breadcrumb" (dict "Context" . "Class" "mt-6") }}
+    </div>
+  </div>
+</section> -->
+
+<section class="relative bg-cover bg-center bg-no-repeat text-white py-32 banner-lumax"
+  {{ with .Params.banner_background }}
+    {{ $image := resources.Get . }}
+    style="background-image: url('{{ $image.Permalink }}');"
+  {{ end }}>
+  
+  <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-black/30 z-0"></div>
+
+  <div class="container relative z-10">
+    <div class="text-center max-w-3xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        {{ T (printf "%s" (lower .Title)) | default .Title | title }}
+      </h1>
+      
+      {{ with .Params.banner_content }}
+        <p class="text-lg md:text-xl mb-8">{{ . }}</p>
+      {{ end }}
+
+      {{ with .Params.button }}
+        {{ if .enable }}
+          <a href="{{ .link | relURL }}" class="btn btn-primary text-white">
+            {{ .label }}
+            <i class="fa fa-arrow-right pl-2"></i>
+          </a>
+        {{ end }}
+      {{ end }}
     </div>
   </div>
 </section>

@@ -1,0 +1,27 @@
+<!-- layouts/shortcodes/column.html 
+
+<div class="column">
+    {{ .Inner }}
+</div> 
+
+<div class="col-md-{{ .Get "width" }}">
+    {{ .Inner }}
+</div>
+
+<div class="col">
+  {{ .Inner }}
+</div>
+
+  
+
+<div class="flex flex-col">
+  {{ .Inner | safeHTML | markdownify  }}
+</div> -->
+
+<div class="flex flex-col prose">
+  {{ if in .Inner "<" }}
+    {{ .Inner | safeHTML }}
+  {{ else }}
+    {{ .Inner | markdownify }}
+  {{ end }}
+</div>

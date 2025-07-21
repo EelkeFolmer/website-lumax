@@ -1,38 +1,104 @@
 {{ define "main" }}
   <!-- Banner -->
-  {{ with .Params.banner }}
-    <section class="section pt-14">
-      <div class="container">
-        <div class="row justify-center">
-          <div class="lg:col-7 md:col-9 mb-8 text-left">
-            <h1 class="mb-4 text-h3 lg:text-h1">
-              {{ .title | markdownify }}
-            </h1>
-            <p class="mb-8">
-              {{ .content | markdownify }}
-            </p>
-            {{ with .button }}
-              {{ if .enable }}
-                <a
-                  class="btn btn-primary"
-                  href="{{ .link | absURL }}"
-                  {{ if strings.HasPrefix .link `http` }}
-                    target="_blank" rel="noopener"
-                  {{ end }}>
-                  {{ .label }}
-                  <i class="fa fa-arrow-right pl-2"></i>
-                </a>
-              {{ end }}
+{{ with .Params.banner }}
+  {{ $bg := .image | relURL }}
+  <section class="relative bg-cover bg-center bg-no-repeat text-white py-32 hero-banner" style='background-image: url("{{ $bg }}");'>
+    
+    {{ if .gradient }}
+      <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-black/30 z-0"></div>
+    {{ end }}
+
+    <div class="container relative z-10">
+      <div class="row justify-center">
+        <div class="lg:col-7 md:col-9 text-center">
+          <h1 class="mb-4 text-h3 lg:text-h1">
+            {{ .title | markdownify }}
+          </h1>
+          <p class="mb-8">
+            {{ .content | markdownify }}
+          </p>
+          {{ with .button }}
+            {{ if .enable }}
+              <a
+                class="btn btn-primary"
+                href="{{ .link | absURL }}"
+                {{ if strings.HasPrefix .link `http` }}
+                  target="_blank" rel="noopener"
+                {{ end }}>
+                {{ .label }}
+                <i class="fa fa-arrow-right pl-2"></i>
+              </a>
             {{ end }}
-          </div>
-          <div class="col-12">
-            {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "Class" "mx-auto lg:!max-w-[800px]" "DisplayXL" "800x" ) }}
-          </div>
+          {{ end }}
         </div>
       </div>
-    </section>
-  {{ end }}
+    </div>
+  </section>
+{{ end }}
+
   <!-- /Banner -->
+<!-- Services Section -->
+{{ range $i, $service := .Params.services }}
+  <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
+    <div class="container">
+      <div class="row items-center justify-between">
+        <!-- Image right (or left if alternating) -->
+        <div class="mb:md-0 {{ if not (modBool $i 2) }}md:order-2{{ end }} md:col-5 mb-6">
+          {{ partial "image" (dict "Src" $service.image "Alt" $service.title "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x") }}
+        </div>
+
+        <!-- Text content -->
+        <div class="{{ if not (modBool $i 2) }}md:order-1{{ end }} md:col-7 lg:col-6">
+          <h2 class="mb-4">{{ $service.title | markdownify }}</h2>
+          <p class="mb-8 text-lg">{{ $service.content | markdownify }}</p>
+          <ul>
+            {{ range $service.bulletpoints }}
+              <li class="relative mb-4 pl-6">
+                <i class="fa fa-check absolute left-0 top-1.5"></i>
+                {{ . | markdownify }}
+              </li>
+            {{ end }}
+          </ul>
+          {{ with $service.button }}
+            {{ if .enable }}
+              <a class="btn btn-primary mt-6" href="{{ .link | absURL }}">
+                {{ .label }}
+                <i class="fa fa-arrow-right pl-2"></i>
+              </a>
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+{{ end }}
+<!-- /Services Section -->
+{{ with .Params.hero }}
+  {{ $bg := .image | relURL }}
+  <section class="relative bg-cover bg-center bg-no-repeat text-white py-32 banner-lumax" style='background-image: url("{{ $bg }}");'>
+    
+    {{ if .gradient }}
+      <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-black/30 z-0"></div>
+    {{ end }}
+
+    <div class="container relative z-10">
+      <div class="text-center max-w-3xl mx-auto">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">{{ .title }}</h1>
+        <p class="text-lg md:text-xl mb-8">{{ .content }}</p>
+        {{ with .button }}
+          {{ if .enable }}
+            <a href="{{ .link | relURL }}" class="btn btn-primary text-white">
+              {{ .label }}
+              <i class="fa fa-arrow-right pl-2"></i>
+            </a>
+          {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+{{ end }}
+
+
 
   <!-- Features -->
   {{ range $i, $e:= .Params.features }}

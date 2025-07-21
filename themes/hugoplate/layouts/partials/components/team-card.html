@@ -1,0 +1,30 @@
+<div class="col-6 col-lg-3 mb-4">
+  <div class="card h-100">
+    {{ if .image }}
+      {{ partial "image" (dict 
+        "Src" .image 
+        "Alt" .name 
+        "Class" "card-img-top" 
+        "Loading" "lazy" 
+        "Context" .context ) }}
+    {{ end }}
+    <div class="card-body">
+      <h5 class="card-title">
+          {{ .name }}
+      </h5>
+      {{ if .email }}
+        <p class="card-text mb-1">
+          <a href="mailto:{{ .email }}">{{ .email }}</a> 
+        </p>
+      {{ end }}
+    {{ if .link }}
+        <p class="card-text mb-1">
+            <a href="{{ .link }}" target="_blank"><i class="fa-solid fa-link"></i> LinkedIn</a>
+        </p>
+
+    {{ end }}
+    <p class="card-text mb-3 ">{{ .desc }}</p>
+    
+    </div>
+  </div>
+</div>

@@ -1,12 +1,33 @@
 {{ define "main" }}
   <section class="section-sm">
     <div class="container">
-      <div class="row justify-center">
-        <div class="md:col-10 lg:col-7 text-left">
-          <!-- {{ partial "image" (dict "Src" .Params.image "Context" .Page "Alt" .Title "Class" "mx-auto mb-6" "Size" "200x200") }} -->
-          <h2 class="h3 mb-6">{{ .Title }}</h2>
-          <div class="content">{{ .Content }}</div>
+      <div class="row items-center justify-between">
+      
+        <!-- Image Section -->
+        {{ with .Params.image }}
+        <div class="mb:md-0 md:order-2 md:col-5 mb-6">
+          {{ partial "image" (dict "Src" . "Context" $ "Alt" $.Title "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x") }}
         </div>
+        {{ end }}
+
+        <!-- Text Section -->
+        <div class="md:order-1 ">
+          <h2 class="mb-4">{{ .Title }}</h2>
+          <div class="content text-lg mb-8">{{ .Content }}</div>
+
+          {{ with .Params.bulletpoints }}
+          <ul>
+            {{ range . }}
+              <li class="relative mb-4 pl-6">
+                <i class="fa fa-check absolute left-0 top-1.5"></i>
+                {{ . | markdownify }}
+              </li>
+            {{ end }}
+          </ul>
+          {{ end }}
+
+        </div>
+
       </div>
     </div>
   </section>
