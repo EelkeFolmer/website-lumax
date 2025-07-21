@@ -4,7 +4,7 @@ command = "yarn project-setup; yarn build"
 
 [build.environment]
 HUGO_VERSION = "0.134.3"
-GO_VERSION = "1.23."
+GO_VERSION = "1.23.0"
 
 [context.production.environment]
 HUGO_BASEURL = "https://lumax.ai"
