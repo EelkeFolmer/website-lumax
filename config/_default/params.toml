@@ -65,7 +65,7 @@ expire_days = 7
 # seo module: https://github.com/gethugothemes/hugo-modules/tree/master/seo-tools/basic-seo
 [metadata]
 keywords = ["Boilerplate", "Hugo"]
-description = "Hugo & Tailwindcss Starter"
+description = "At Lumax, we operate at the cutting edge of biodiversity monitoring, combining aerial technology with artificial intelligence to advance ecological understanding."
 author = "zeon.studio"
 twitter = "zeon_studio"
 image = "images/og-image.png"
