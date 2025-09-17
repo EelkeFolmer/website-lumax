@@ -4,7 +4,7 @@ baseURL = "https://lumax.ai/"
 # Title of your website (required).
 title = "Lumax"
 [params]
-  description = "Lumax"
+  description = "At Lumax, we operate at the cutting edge of biodiversity monitoring, combining aerial technology with artificial intelligence to advance ecological understanding."
 # Your theme name
 theme = "hugoplate"
 # Default time zone for time stamps; use any valid tz database name: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List

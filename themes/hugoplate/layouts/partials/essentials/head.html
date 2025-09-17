@@ -7,6 +7,10 @@
 
 <!-- theme meta -->
 <meta name="theme-name" content="hugoplate" />
+<meta property="og:title" content="{{ .Title | default .Site.Title }}">
+<meta property="og:description" content="{{ .Description | default .Site.Params.description }}">
+<meta property="og:image" content="{{ with .Params.images }}{{ index . 0 }}{{ else }}{{ "images/default.png" | absURL }}{{ end }}">
+
 {{ $favicon := resources.Get "images/frontal-bird-spread-favicon.svg" }}
 <link rel="icon" type="image/svg+xml" href="{{ $favicon.Permalink }}" />
 <!-- favicon -->
