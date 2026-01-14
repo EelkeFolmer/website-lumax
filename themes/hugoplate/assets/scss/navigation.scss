@@ -25,6 +25,10 @@ input#nav-toggle:checked ~ #nav-menu {
   image {
     @apply max-h-full max-w-full;
   }
+  img {
+    width: 210px;
+    height: auto;
+  }
 }
 
 .navbar-nav {

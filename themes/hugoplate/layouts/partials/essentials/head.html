@@ -11,8 +11,8 @@
 <meta property="og:description" content="At Lumax, we operate at the cutting edge of biodiversity monitoring, combining aerial technology with artificial intelligence to advance ecological understanding.">
 <meta property="og:image" content="{{ with .Params.images }}{{ index . 0 }}{{ else }}{{ "images/og-image.png" | absURL }}{{ end }}">
 
-{{ $favicon := resources.Get "images/frontal-bird-spread-favicon.svg" }}
-<link rel="icon" type="image/svg+xml" href="{{ $favicon.Permalink }}" />
+{{ $favicon := resources.Get "images/Favicon_blue.png" }}
+<link rel="icon" type="image/png" href="{{ $favicon.Permalink }}" />
 <!-- favicon -->
 {{ partialCached "favicon" . }}
 
