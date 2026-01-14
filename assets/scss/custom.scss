@@ -75,7 +75,8 @@ body {
 }
 
 .header {
-@apply bg-slate-300 dark:bg-gray-800 shadow-md;
+background-color: #1a365d;
+@apply shadow-md;
 @apply py-1;  /* Adjust the padding value (py-2 = 0.5rem) as needed */
 }
 

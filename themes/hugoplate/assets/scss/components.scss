@@ -7,6 +7,7 @@ main {
   @apply py-24 xl:py-28;
   &-sm {
     @apply py-16 xl:py-20;
+    background-color: #e0f2fe;
   }
 }
 
