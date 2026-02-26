@@ -85,6 +85,8 @@ AI has great potential to positively impact biodiversity monitoring. As with all
 {{< /column >}}
 {{< /columns >}}
 
+<hr>
+
 ### End-to-end application
 
 Impact comes through effective implementation of workflows. We build applications that incorporate workflows from start to finish. 
@@ -103,6 +105,8 @@ Impact comes through effective implementation of workflows. We build application
 
 {{< /column >}}
 {{< /columns >}}
+
+<hr>
 
 ### Professional training
 
