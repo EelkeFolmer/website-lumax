@@ -1,12 +1,10 @@
 ---
-title: ""
+title: "Trout Identification"
 meta_title: ""
 description: ""
 draft: false
 banner_background: "images/trout_banner.jpg"
 ---
-## Trout Identification
-
 Trout have unique spot patterns - like human fingerprints - that stay unchanged throughout their lives. We use computer vision to identify individual trout automatically, helping researchers track and study these fish in their natural habitat.
 
 Our processing pipeline combines multiple machine learning models to identify individual trout:

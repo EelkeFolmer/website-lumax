@@ -1,12 +1,10 @@
 ---
-title: ""
+title: "Aerial Salmon Detection"
 meta_title: ""
 description: ""
 draft: false
 banner_background: "images/aerialsalmon_banner2.jpg"
 ---
-## Aerial Salmon Detection
-
 A thorough knowledge about the distribution and numbers of spawning Pacific salmon is fundamental to the conservation and management of its populations. Conventional salmon escapement assessment methods are expensive, invasive and labor-intensive. By leveraging cutting-edge technology, we're transforming salmon population monitoring, making it more efficient, accurate, and accessible.
 
 <br>

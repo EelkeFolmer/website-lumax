@@ -65,6 +65,45 @@ We leverage the collected data to develop precise, actionable data products thro
 
 <hr>
 
+### Integrating AI & biodiversity monitoring
+
+AI has great potential to positively impact biodiversity monitoring. As with all new tools this has to be done with care. We can help design, build and implement Machine Learning techniques tailored to your needs.
+
+{{< columns >}}
+{{< column >}}
+
+{{< image src="/images/Services_trout_reID.png" caption="" alt="alter-text" height="" width="" position="center" command="fill" option="q100" class="img-fluid" title="image title"  webp="false" >}}
+
+{{< /column >}}
+{{< column >}}
+
+- Species detectors
+- Vegetation segmentation
+- Individual re-identification
+- Camera trap analysis
+
+{{< /column >}}
+{{< /columns >}}
+
+### End-to-end application
+
+Impact comes through effective implementation of workflows. We build applications that incorporate workflows from start to finish. 
+
+{{< columns >}}
+{{< column >}}
+
+- AI-BIRD
+- Salmon Detector
+- Seal Detector
+
+{{< /column >}}
+{{< column >}}
+
+{{< image src="/images/AIBIRD_portal.png" caption="" alt="alter-text" height="" width="" position="center" command="fill" option="q100" class="img-fluid" title="image title"  webp="false" >}}
+
+{{< /column >}}
+{{< /columns >}}
+
 ### Professional training
 
 Our customized programs start from domain knowledge and cover critical domains including advanced flight operations, data management and analysis. Our training is designed to equip researchers, ecologists, and field professionals with the technical skills and practical knowledge needed to excel in data-driven environmental research and management.
