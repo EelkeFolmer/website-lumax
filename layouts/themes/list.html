@@ -1,0 +1,27 @@
+{{ define "main" }}
+<div class="page-header">
+  <div class="wrap">
+    <h1>Research Themes</h1>
+    <p>Our applied research projects, combining field work, drone technology, and machine learning for conservation.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="themes-grid">
+    {{ range .Pages }}
+    <a href="{{ .RelPermalink }}" class="theme-card">
+      {{ with .Params.image }}
+      <div class="theme-card-img">
+        <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy"/>
+      </div>
+      {{ end }}
+      <div class="theme-card-body">
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Params.summary }}</p>
+        <div class="theme-card-arrow">Read more <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

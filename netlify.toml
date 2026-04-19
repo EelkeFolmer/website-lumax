@@ -1,0 +1,22 @@
+[build]
+  command = "hugo --minify"
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.126.0"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+
+[[redirects]]
+  from = "/team"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/team/"
+  to = "/about/"
+  status = 301

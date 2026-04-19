@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="page-header">
+  <div class="wrap">
+    <a href="/themes/" class="back-btn">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      All Themes
+    </a>
+    <h1>{{ .Title }}</h1>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="theme-detail-content">
+    {{ .Content }}
+  </div>
+</div>
+{{ end }}

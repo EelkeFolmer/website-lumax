@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="page-header">
+  <div class="wrap">
+    <a href="/tools/" class="back-btn">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      All Tools
+    </a>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="tool-detail">
+    <div class="tool-detail-illus">
+      {{ .Params.illustration | safeHTML }}
+    </div>
+    <div class="theme-detail-content">
+      {{ .Content }}
+    </div>
+  </div>
+</div>
+{{ end }}

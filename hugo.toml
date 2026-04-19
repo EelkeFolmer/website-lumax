@@ -1,0 +1,24 @@
+baseURL = "https://lumax.ai/"
+languageCode = "en-us"
+title = "Lumax"
+
+[params]
+  description = "Field Data. Ecological Analytics. Conservation Impact."
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Services"
+    url = "/services/"
+    weight = 2
+  [[menu.main]]
+    name = "Themes"
+    url = "/themes/"
+    weight = 3
+  [[menu.main]]
+    name = "About & Team"
+    url = "/about/"
+    weight = 4
