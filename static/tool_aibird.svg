@@ -1,0 +1,63 @@
+<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="560" height="300" fill="#dce8f0"/>
+  <rect width="560" height="115" fill="#c8dce8"/>
+  <path d="M0,185 Q140,172 280,180 Q420,188 560,175 L560,300 L0,300Z" fill="#8aaa78"/>
+  <path d="M0,200 Q140,190 280,196 Q420,202 560,192 L560,300 L0,300Z" fill="#6a8a58"/>
+  <rect x="75" y="200" width="410" height="88" rx="2" fill="#7a9a68"/>
+  <g stroke="#5a7a48" stroke-width="0.8" opacity="0.5">
+    <line x1="75" y1="215" x2="485" y2="215"/><line x1="75" y1="230" x2="485" y2="230"/>
+    <line x1="75" y1="245" x2="485" y2="245"/><line x1="75" y1="260" x2="485" y2="260"/>
+    <line x1="75" y1="275" x2="485" y2="275"/>
+    <line x1="115" y1="200" x2="115" y2="288"/><line x1="155" y1="200" x2="155" y2="288"/>
+    <line x1="195" y1="200" x2="195" y2="288"/><line x1="235" y1="200" x2="235" y2="288"/>
+    <line x1="275" y1="200" x2="275" y2="288"/><line x1="315" y1="200" x2="315" y2="288"/>
+    <line x1="355" y1="200" x2="355" y2="288"/><line x1="395" y1="200" x2="395" y2="288"/>
+    <line x1="435" y1="200" x2="435" y2="288"/>
+  </g>
+  <g fill="#e8f0e0">
+    <circle cx="105" cy="218" r="5"/><circle cx="138" cy="232" r="5"/><circle cx="172" cy="215" r="5"/>
+    <circle cx="208" cy="238" r="5"/><circle cx="248" cy="222" r="5"/><circle cx="292" cy="240" r="5"/>
+    <circle cx="328" cy="218" r="5"/><circle cx="362" cy="235" r="5"/><circle cx="402" cy="222" r="5"/>
+    <circle cx="438" cy="242" r="5"/><circle cx="122" cy="255" r="5"/><circle cx="165" cy="262" r="5"/>
+    <circle cx="212" cy="258" r="5"/><circle cx="258" cy="265" r="5"/><circle cx="308" cy="258" r="5"/>
+    <circle cx="348" cy="268" r="5"/><circle cx="385" cy="255" r="5"/><circle cx="422" cy="265" r="5"/>
+  </g>
+  <g fill="none" stroke="#1a9898" stroke-width="1.5">
+    <rect x="98" y="211" width="14" height="14" rx="1"/><rect x="131" y="225" width="14" height="14" rx="1"/>
+    <rect x="165" y="208" width="14" height="14" rx="1"/><rect x="201" y="231" width="14" height="14" rx="1"/>
+    <rect x="241" y="215" width="14" height="14" rx="1"/><rect x="285" y="233" width="14" height="14" rx="1"/>
+    <rect x="321" y="211" width="14" height="14" rx="1"/><rect x="355" y="228" width="14" height="14" rx="1"/>
+    <rect x="395" y="215" width="14" height="14" rx="1"/><rect x="431" y="235" width="14" height="14" rx="1"/>
+  </g>
+  <g fill="#d08040"><circle cx="188" cy="258" r="4.5"/><circle cx="342" cy="252" r="4.5"/><circle cx="452" cy="260" r="4.5"/></g>
+  <g fill="none" stroke="#c84820" stroke-width="1.8">
+    <rect x="181" y="251" width="14" height="14" rx="1"/><rect x="335" y="245" width="14" height="14" rx="1"/><rect x="445" y="253" width="14" height="14" rx="1"/>
+  </g>
+  <g stroke="#c84820" stroke-width="1.5" stroke-linecap="round">
+    <line x1="184" y1="254" x2="192" y2="262"/><line x1="192" y1="254" x2="184" y2="262"/>
+    <line x1="338" y1="248" x2="346" y2="256"/><line x1="346" y1="248" x2="338" y2="256"/>
+    <line x1="448" y1="256" x2="456" y2="264"/><line x1="456" y1="256" x2="448" y2="264"/>
+  </g>
+  <g transform="translate(280,62)">
+    <rect x="-16" y="-8" width="32" height="16" rx="4" fill="#1a2838" stroke="#0a1828" stroke-width="1.5"/>
+    <line x1="-16" y1="0" x2="-42" y2="-16" stroke="#1a2838" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="16" y1="0" x2="42" y2="-16" stroke="#1a2838" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="-16" y1="0" x2="-42" y2="16" stroke="#1a2838" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="16" y1="0" x2="42" y2="16" stroke="#1a2838" stroke-width="3.5" stroke-linecap="round"/>
+    <ellipse cx="-42" cy="-16" rx="13" ry="4" fill="none" stroke="#1a2838" stroke-width="1.5"/>
+    <ellipse cx="42" cy="-16" rx="13" ry="4" fill="none" stroke="#1a2838" stroke-width="1.5"/>
+    <ellipse cx="-42" cy="16" rx="13" ry="4" fill="none" stroke="#1a2838" stroke-width="1.5"/>
+    <ellipse cx="42" cy="16" rx="13" ry="4" fill="none" stroke="#1a2838" stroke-width="1.5"/>
+    <line x1="0" y1="10" x2="0" y2="118" stroke="#1a2838" stroke-width="1" stroke-dasharray="6,5" opacity="0.35"/>
+  </g>
+  <path d="M88,76 Q96,70 104,76" fill="none" stroke="#2a3848" stroke-width="2" stroke-linecap="round"/>
+  <path d="M113,61 Q121,55 129,61" fill="none" stroke="#2a3848" stroke-width="2" stroke-linecap="round"/>
+  <path d="M398,68 Q406,62 414,68" fill="none" stroke="#2a3848" stroke-width="2" stroke-linecap="round"/>
+  <path d="M428,52 Q436,46 444,52" fill="none" stroke="#2a3848" stroke-width="2" stroke-linecap="round"/>
+  <rect x="14" y="14" width="130" height="44" rx="6" fill="white" opacity="0.88"/>
+  <text x="24" y="32" font-family="monospace" font-size="9" fill="#1a2838" font-weight="bold">AI-BIRD DETECTION</text>
+  <circle cx="24" cy="46" r="4" fill="#1a9898"/>
+  <text x="32" y="49" font-family="monospace" font-size="8" fill="#1a2838">18 alive</text>
+  <circle cx="82" cy="46" r="4" fill="#c84820"/>
+  <text x="90" y="49" font-family="monospace" font-size="8" fill="#1a2838">3 dead</text>
+</svg>
