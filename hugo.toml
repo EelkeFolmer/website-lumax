@@ -1,14 +1,7 @@
 baseURL = "https://lumax.ai/"
 languageCode = "en-us"
 title = "Lumax"
-
-[module]
-  [[module.mounts]]
-    source = "static"
-    target = "static"
-  [[module.mounts]]
-    source = "images"
-    target = "static/images"
+staticDir = ["static", "images"]
 
 [params]
   description = "Field Data. Ecological Analytics. Conservation Impact."
