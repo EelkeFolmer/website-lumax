@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="16" fill="#0369a1"/>
+  
+  <!-- White flying bird - frontal view, spread wings -->
+  <path d="M16 8
+           C10 8, 4 14, 2 20
+           C6 18, 12 16, 16 16
+           C20 16, 26 18, 30 20
+           C28 14, 22 8, 16 8
+           Z"
+        fill="white"
+        stroke="white"
+        stroke-width="0.5"/>
+  
+  <!-- Body highlight -->
+  <path d="M16 10
+           C14 10, 10 14, 8 16
+           C10 15, 14 14, 16 14
+           C18 14, 22 15, 24 16
+           C22 14, 18 10, 16 10"
+        fill="#0369a1"
+        stroke="#0369a1"
+        stroke-width="0.3"/>
+</svg>
