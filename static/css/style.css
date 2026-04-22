@@ -239,3 +239,13 @@ p    { max-width: 68ch; }
 .theme-detail-content img { display: block; width: 100%; border-radius: 10px; box-shadow: 0 6px 24px rgba(0,0,0,.09); margin: 28px 0; }
 .theme-detail-content p img { display: block; width: 100%; border-radius: 10px; box-shadow: 0 6px 24px rgba(0,0,0,.09); margin: 28px 0; }
 .theme-detail-content p img { display: block; width: 100%; border-radius: 10px; box-shadow: 0 6px 24px rgba(0,0,0,.09); margin: 28px 0; }
+
+.theme-detail-content p img,
+.theme-detail-content img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 10px !important;
+  box-shadow: 0 6px 24px rgba(0,0,0,.09) !important;
+  margin: 28px 0 !important;
+}
