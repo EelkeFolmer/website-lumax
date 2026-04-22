@@ -22,3 +22,7 @@ title = "Lumax"
     name = "About & Team"
     url = "/about/"
     weight = 4
+
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
