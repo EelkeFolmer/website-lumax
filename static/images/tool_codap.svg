@@ -1,135 +1,25 @@
 <svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg">
-  <!-- App window -->
   <rect width="560" height="300" fill="#f0ede5"/>
   <rect x="14" y="14" width="532" height="272" rx="8" fill="white" stroke="#dddbd4" stroke-width="1.5"/>
-  <!-- Title bar -->
   <rect x="14" y="14" width="532" height="30" rx="8" fill="#f5f4f0"/>
   <rect x="14" y="28" width="532" height="16" fill="#f5f4f0"/>
-  <circle cx="30" cy="29" r="5" fill="#ff6058"/>
-  <circle cx="46" cy="29" r="5" fill="#ffbb2c"/>
-  <circle cx="62" cy="29" r="5" fill="#28ca42"/>
-  <text x="185" y="34" font-family="monospace" font-size="10" fill="#5a6270" font-weight="bold">CODAP — Coastal Data Analysis Portal</text>
+  <text x="155" y="34" font-family="monospace" font-size="10" fill="#1a5fa8" font-weight="bold">CODAP — Coastal Data Analysis Portal</text>
 
-  <!-- LEFT: Orthomosaic / classification map -->
-  <rect x="22" y="52" width="248" height="148" rx="4" fill="#c8dce8" stroke="#dddbd4" stroke-width="1"/>
-  <text x="30" y="66" font-family="monospace" font-size="8.5" fill="#1a5fa8" font-weight="bold">Orthomosaic Classification — Paesens 2024</text>
+  <!-- Background (shows as white gaps between bands) -->
+  <rect x="22" y="52" width="516" height="220" rx="4" fill="white"/>
 
-  <!-- Land / dike at top -->
-  <rect x="22" y="68" width="248" height="22" fill="#8a6a48"/>
-  <text x="30" y="82" font-family="monospace" font-size="7" fill="#e8d8b8">Dike / Land</text>
+  <!-- RED band (top / highest elevation) -->
+  <path d="M22,56 Q100,54 180,58 Q260,62 340,56 Q420,50 500,56 Q520,58 538,56 L538,106 Q510,110 440,104 Q360,98 280,106 Q200,114 120,106 Q60,100 22,106 Z" fill="#d84820"/>
 
-  <!-- Saltmarsh zones (green) -->
-  <path d="M22,90 Q80,86 130,90 Q170,93 200,88 Q225,84 270,90 L270,118 Q245,112 200,116 Q165,120 130,116 Q80,112 22,118 Z" fill="#5a8a48"/>
-  <!-- Pioneer zone (lighter green) -->
-  <path d="M22,118 Q70,112 120,116 Q170,120 220,115 Q248,112 270,116 L270,138 Q245,134 220,137 Q170,142 120,138 Q70,134 22,138 Z" fill="#9aba78"/>
-  <!-- Mudflat (tan/beige) -->
-  <path d="M22,138 Q80,134 150,138 Q210,142 270,136 L270,172 Q210,168 150,172 Q80,176 22,172 Z" fill="#c8b060"/>
-  <!-- Tidal channels (blue) -->
-  <path d="M85,90 C82,105 80,122 82,140 C83,155 86,165 88,178" fill="none" stroke="#4a90b8" stroke-width="4" stroke-linecap="round"/>
-  <path d="M155,95 C152,110 150,128 153,145 C155,158 158,168 160,178" fill="none" stroke="#4a90b8" stroke-width="3" stroke-linecap="round"/>
-  <path d="M220,92 C218,108 217,125 220,142 C222,156 225,166 226,178" fill="none" stroke="#4a90b8" stroke-width="3" stroke-linecap="round"/>
-  <!-- Open water at bottom -->
-  <path d="M22,172 Q80,168 150,172 Q210,176 270,170 L270,192 L22,192 Z" fill="#4a90b8"/>
+  <!-- YELLOW band -->
+  <path d="M22,112 Q80,108 160,114 Q240,120 320,112 Q400,104 470,112 Q510,116 538,112 L538,162 Q510,166 460,160 Q385,152 305,162 Q220,172 145,162 Q75,152 22,160 Z" fill="#e8c840"/>
 
-  <!-- Legend -->
-  <rect x="28" y="180" width="236" height="14" rx="2" fill="white" opacity="0.88"/>
-  <rect x="32" y="183" width="8" height="8" fill="#5a8a48"/>
-  <text x="43" y="190" font-family="monospace" font-size="6.5" fill="#2a3848">Saltmarsh</text>
-  <rect x="88" y="183" width="8" height="8" fill="#9aba78"/>
-  <text x="99" y="190" font-family="monospace" font-size="6.5" fill="#2a3848">Pioneer</text>
-  <rect x="142" y="183" width="8" height="8" fill="#c8b060"/>
-  <text x="153" y="190" font-family="monospace" font-size="6.5" fill="#2a3848">Mudflat</text>
-  <rect x="194" y="183" width="8" height="8" fill="#4a90b8"/>
-  <text x="205" y="190" font-family="monospace" font-size="6.5" fill="#2a3848">Channel</text>
+  <!-- GREEN band -->
+  <path d="M22,168 Q90,162 170,170 Q255,178 335,168 Q415,158 490,168 Q516,172 538,168 L538,214 Q515,218 470,212 Q395,204 315,214 Q230,224 150,214 Q80,204 22,212 Z" fill="#88c878"/>
 
-  <!-- RIGHT TOP: DEM elevation model -->
-  <rect x="278" y="52" width="256" height="148" rx="4" fill="#f5f2ea" stroke="#dddbd4" stroke-width="1"/>
-  <text x="286" y="66" font-family="monospace" font-size="8.5" fill="#1a5fa8" font-weight="bold">Digital Elevation Model (DEM)</text>
-  <!-- DEM colour ramp visualization -->
-  <!-- Low elevation (blue/cyan) to high (red/white) -->
-  <defs>
-    <linearGradient id="dem1" x1="0" y1="1" x2="0" y2="0">
-      <stop offset="0%" stop-color="#2a6898"/>
-      <stop offset="25%" stop-color="#5ab8c8"/>
-      <stop offset="50%" stop-color="#88c878"/>
-      <stop offset="75%" stop-color="#e8c840"/>
-      <stop offset="100%" stop-color="#d84820"/>
-    </linearGradient>
-  </defs>
-  <!-- DEM surface as colour bands -->
-  <path d="M286,72 Q310,70 335,72 Q360,74 385,72 Q410,70 430,72 Q450,74 526,72 L526,90 Q505,92 480,88 Q455,84 430,88 Q405,92 375,88 Q345,84 315,90 Q295,92 286,90 Z" fill="#d84820"/>
-  <path d="M286,90 Q310,88 340,92 Q370,96 400,90 Q425,86 455,90 Q480,93 526,90 L526,108 Q505,112 478,108 Q450,104 420,110 Q390,116 355,110 Q320,104 295,110 Q290,111 286,110 Z" fill="#e8c840"/>
-  <path d="M286,110 Q310,106 345,112 Q380,118 415,112 Q445,107 478,112 Q504,116 526,112 L526,130 Q505,133 475,129 Q445,125 412,131 Q378,137 340,131 Q305,125 286,129 Z" fill="#88c878"/>
-  <path d="M286,129 Q310,125 348,131 Q386,137 422,131 Q450,126 480,131 Q504,135 526,131 L526,150 Q504,152 478,149 Q450,146 420,151 Q385,156 345,151 Q308,146 286,149 Z" fill="#5ab8c8"/>
-  <path d="M286,149 Q320,145 360,151 Q400,157 440,151 Q475,146 526,150 L526,168 L286,168 Z" fill="#2a6898"/>
-  <!-- Elevation scale bar -->
-  <rect x="286" y="174" width="120" height="8" fill="url(#dem1)"/>
-  <text x="286" y="188" font-family="monospace" font-size="6" fill="#2a3848">0.0m</text>
-  <text x="338" y="188" font-family="monospace" font-size="6" fill="#2a3848" text-anchor="middle">1.2m</text>
-  <text x="406" y="188" font-family="monospace" font-size="6" fill="#2a3848">2.5m+</text>
-  <text x="286" y="196" font-family="monospace" font-size="6.5" fill="#5a6270">GSD ≈ 10mm · Survey: 600 ha · Flight: 3–4h</text>
+  <!-- CYAN band -->
+  <path d="M22,218 Q85,212 165,220 Q250,228 330,218 Q410,208 488,218 Q514,222 538,218 L538,256 Q512,260 465,254 Q385,246 305,256 Q220,266 140,256 Q72,246 22,254 Z" fill="#5ab8c8"/>
 
-  <!-- BOTTOM LEFT: Sedimentation change chart -->
-  <rect x="22" y="208" width="158" height="70" rx="4" fill="#faf9f5" stroke="#dddbd4" stroke-width="1"/>
-  <text x="30" y="222" font-family="monospace" font-size="8.5" fill="#1a5fa8" font-weight="bold">Sedimentation 2019–2024</text>
-  <line x1="40" y1="266" x2="172" y2="266" stroke="#dddbd4" stroke-width="1"/>
-  <line x1="40" y1="232" x2="40" y2="266" stroke="#dddbd4" stroke-width="1"/>
-  <!-- Bars: positive = sedimentation (green), negative = erosion (red) -->
-  <rect x="48" y="248" width="16" height="18" rx="1" fill="#4a7a5e"/>
-  <rect x="70" y="244" width="16" height="22" rx="1" fill="#4a7a5e"/>
-  <rect x="92" y="255" width="16" height="11" rx="1" fill="#c84820"/>
-  <rect x="114" y="240" width="16" height="26" rx="1" fill="#4a7a5e"/>
-  <rect x="136" y="250" width="16" height="16" rx="1" fill="#4a7a5e"/>
-  <line x1="40" y1="255" x2="172" y2="255" stroke="#888" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.5"/>
-  <g font-family="monospace" font-size="6" fill="#5a6270" text-anchor="middle">
-    <text x="56" y="274">2019</text><text x="78" y="274">2020</text>
-    <text x="100" y="274">2021</text><text x="122" y="274">2022</text><text x="144" y="274">2023</text>
-  </g>
-  <text x="42" y="237" font-family="monospace" font-size="6" fill="#4a7a5e">+</text>
-  <text x="42" y="260" font-family="monospace" font-size="6" fill="#c84820">−</text>
-
-  <!-- BOTTOM MIDDLE: Erosion/accretion map -->
-  <rect x="188" y="208" width="164" height="70" rx="4" fill="#faf9f5" stroke="#dddbd4" stroke-width="1"/>
-  <text x="196" y="222" font-family="monospace" font-size="8.5" fill="#1a5fa8" font-weight="bold">DEM Change 2023 vs 2024</text>
-  <defs>
-    <linearGradient id="change" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#c84820"/>
-      <stop offset="50%" stop-color="#f5f0e5"/>
-      <stop offset="100%" stop-color="#4a7a5e"/>
-    </linearGradient>
-  </defs>
-  <!-- Change map patches -->
-  <rect x="196" y="228" width="148" height="30" rx="3" fill="#f0ede5"/>
-  <!-- Erosion patches (red) -->
-  <ellipse cx="220" cy="243" rx="14" ry="8" fill="#c84820" opacity="0.7"/>
-  <ellipse cx="270" cy="238" rx="10" ry="6" fill="#e07040" opacity="0.6"/>
-  <ellipse cx="310" cy="248" rx="8" ry="5" fill="#c84820" opacity="0.65"/>
-  <!-- Accretion patches (green) -->
-  <ellipse cx="248" cy="245" rx="16" ry="9" fill="#4a7a5e" opacity="0.7"/>
-  <ellipse cx="290" cy="240" rx="12" ry="7" fill="#6a9a5e" opacity="0.65"/>
-  <ellipse cx="330" cy="244" rx="10" ry="6" fill="#4a7a5e" opacity="0.6"/>
-  <!-- Colour scale -->
-  <rect x="196" y="262" width="100" height="6" fill="url(#change)"/>
-  <text x="196" y="274" font-family="monospace" font-size="6" fill="#c84820">−50mm</text>
-  <text x="238" y="274" font-family="monospace" font-size="6" fill="#5a6270" text-anchor="middle">0</text>
-  <text x="296" y="274" font-family="monospace" font-size="6" fill="#4a7a5e">+50mm</text>
-
-  <!-- BOTTOM RIGHT: Sea level rise panel -->
-  <rect x="360" y="208" width="174" height="70" rx="4" fill="#faf9f5" stroke="#dddbd4" stroke-width="1"/>
-  <text x="368" y="222" font-family="monospace" font-size="8.5" fill="#1a5fa8" font-weight="bold">Sea Level Rise vs Growth</text>
-  <line x1="378" y1="266" x2="526" y2="266" stroke="#dddbd4" stroke-width="1"/>
-  <line x1="378" y1="232" x2="378" y2="266" stroke="#dddbd4" stroke-width="1"/>
-  <!-- SLR line (red, rising) -->
-  <path d="M386,264 C404,260 422,254 442,248 C460,243 480,238 518,232" fill="none" stroke="#c84820" stroke-width="2" stroke-dasharray="5,3"/>
-  <!-- Marsh growth line (green, rising faster) -->
-  <path d="M386,262 C404,256 422,248 442,240 C462,232 482,226 518,220" fill="none" stroke="#4a7a5e" stroke-width="2"/>
-  <!-- Zone between = safe -->
-  <path d="M386,262 C404,256 422,248 442,240 C462,232 482,226 518,220 L518,232 C480,238 460,243 442,248 C422,254 404,260 386,264 Z" fill="#4a7a5e" opacity="0.12"/>
-  <!-- Labels -->
-  <text x="520" y="219" font-family="monospace" font-size="6.5" fill="#4a7a5e">Marsh</text>
-  <text x="520" y="232" font-family="monospace" font-size="6.5" fill="#c84820">SLR</text>
-  <!-- X labels -->
-  <g font-family="monospace" font-size="6" fill="#5a6270">
-    <text x="386" y="274">2019</text><text x="430" y="274">2021</text><text x="474" y="274">2023</text>
-  </g>
+  <!-- BLUE band (bottom / lowest / water) -->
+  <path d="M22,260 Q90,254 170,262 Q255,270 335,260 Q415,250 492,260 Q516,264 538,260 L538,272 L22,272 Z" fill="#2a6898"/>
 </svg>
