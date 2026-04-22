@@ -261,3 +261,10 @@ p    { max-width: 68ch; }
 .theme-full-img { display: block; width: 100%; border-radius: 10px; box-shadow: 0 6px 24px rgba(0,0,0,.09); margin: 36px 0; }
 .theme-body-text { font-size: 16px; color: var(--muted); line-height: 1.8; max-width: none; }
 @media(max-width:860px){ .theme-side { grid-template-columns: 1fr; } }
+.theme-side { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin: 36px 0; }
+.theme-side-text p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; max-width: none; }
+.theme-side-text a { color: var(--blue); text-decoration: underline; }
+.theme-side-img img { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 10px; box-shadow: 0 6px 24px rgba(0,0,0,.09); }
+.theme-full-img { display: block; width: 100%; border-radius: 10px; box-shadow: 0 6px 24px rgba(0,0,0,.09); margin: 36px 0; }
+.theme-body-text { font-size: 16px; color: var(--muted); line-height: 1.8; max-width: none; }
+@media(max-width:860px){ .theme-side { grid-template-columns: 1fr; } }
