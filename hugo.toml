@@ -1,7 +1,6 @@
 baseURL = "https://lumax.ai/"
 languageCode = "en-us"
 title = "Lumax"
-staticDir = ["static", "images"]
 
 [params]
   description = "Field Data. Ecological Analytics. Conservation Impact."
