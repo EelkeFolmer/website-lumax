@@ -8,10 +8,16 @@
     <h1>{{ .Title }}</h1>
   </div>
 </div>
-
 <div class="wrap">
-  <div class="theme-detail-content">
-    {{ .Content }}
+  <div class="theme-single">
+    {{ with .Params.image }}
+    <div class="theme-hero-img">
+      <img src="{{ . }}" alt="{{ $.Title }}" loading="eager"/>
+    </div>
+    {{ end }}
+    <div class="theme-detail-content">
+      {{ .Content }}
+    </div>
   </div>
 </div>
 {{ end }}
