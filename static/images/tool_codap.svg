@@ -1,0 +1,25 @@
+<svg viewBox="0 0 560 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="560" height="300" fill="#f0ede5"/>
+  <rect x="14" y="14" width="532" height="272" rx="8" fill="white" stroke="#dddbd4" stroke-width="1.5"/>
+  <rect x="14" y="14" width="532" height="30" rx="8" fill="#f5f4f0"/>
+  <rect x="14" y="28" width="532" height="16" fill="#f5f4f0"/>
+  <text x="155" y="34" font-family="monospace" font-size="10" fill="#1a5fa8" font-weight="bold">CODAP — Coastal Data Analysis Portal</text>
+
+  <!-- Background (shows as white gaps between bands) -->
+  <rect x="22" y="52" width="516" height="220" rx="4" fill="white"/>
+
+  <!-- RED band (top / highest elevation) -->
+  <path d="M22,56 Q100,54 180,58 Q260,62 340,56 Q420,50 500,56 Q520,58 538,56 L538,106 Q510,110 440,104 Q360,98 280,106 Q200,114 120,106 Q60,100 22,106 Z" fill="#d84820"/>
+
+  <!-- YELLOW band -->
+  <path d="M22,112 Q80,108 160,114 Q240,120 320,112 Q400,104 470,112 Q510,116 538,112 L538,162 Q510,166 460,160 Q385,152 305,162 Q220,172 145,162 Q75,152 22,160 Z" fill="#e8c840"/>
+
+  <!-- GREEN band -->
+  <path d="M22,168 Q90,162 170,170 Q255,178 335,168 Q415,158 490,168 Q516,172 538,168 L538,214 Q515,218 470,212 Q395,204 315,214 Q230,224 150,214 Q80,204 22,212 Z" fill="#88c878"/>
+
+  <!-- CYAN band -->
+  <path d="M22,218 Q85,212 165,220 Q250,228 330,218 Q410,208 488,218 Q514,222 538,218 L538,256 Q512,260 465,254 Q385,246 305,256 Q220,266 140,256 Q72,246 22,254 Z" fill="#5ab8c8"/>
+
+  <!-- BLUE band (bottom / lowest / water) -->
+  <path d="M22,260 Q90,254 170,262 Q255,270 335,260 Q415,250 492,260 Q516,264 538,260 L538,272 L22,272 Z" fill="#2a6898"/>
+</svg>
