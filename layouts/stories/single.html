@@ -1,0 +1,99 @@
+{{ define "main" }}
+{{- $stories := (where site.RegularPages "Section" "stories").ByWeight -}}
+{{- $n := 0 }}{{ range $i, $p := $stories }}{{ if eq $p.RelPermalink $.RelPermalink }}{{ $n = add $i 1 }}{{ end }}{{ end -}}
+
+{{- /* Night-only ambient glow, from the export's dark variant. */ -}}
+<div class="glow glow--teal" style="width:600px;height:600px;right:-220px;top:120px"></div>
+<div class="glow glow--green" style="width:520px;height:520px;left:-200px;bottom:200px"></div>
+
+<div class="story__meta">
+  <span>field notes &mdash; project story {{ printf "%02d" $n }} / {{ printf "%02d" (len $stories) }}</span>
+  <span>{{ .Params.partner }}</span>
+</div>
+
+<div class="story__masthead">
+  <div class="col-title">
+    <h1>{{ .Params.shortTitle | default .Title }}</h1>
+    <p class="story__standfirst">{{ .Params.standfirst }}</p>
+  </div>
+  <div class="col-credits">
+    <p class="story__credits">
+      {{ .Params.partner }}<br>{{ .Params.status }}
+      {{- with .Params.creditNote }}<br><br>{{ . }}{{ end }}
+    </p>
+  </div>
+</div>
+
+{{- range .Params.blocks }}
+  {{- if eq .type "figure" }}
+<div class="story__figure">
+  <div class="col-image">{{ partial "figure.html" (dict "src" .photo "alt" .alt "fill" "830x459") }}</div>
+  <div class="col-caption">
+    <p class="lede">{{ .caption }}</p>
+    <p class="credit">{{ .credit }}</p>
+  </div>
+</div>
+
+  {{- else if eq .type "figure-pair" }}
+<div class="story__pair">
+  {{- range .items }}
+  <div>
+    {{ partial "figure.html" (dict "src" .photo "alt" .alt "fill" "400x272") }}
+    <p class="lede">{{ .caption }}</p>
+    <p class="credit">{{ .credit }}</p>
+  </div>
+  {{- end }}
+</div>
+
+  {{- else if eq .type "quote" }}
+<div class="story__quote">
+  <p>&ldquo;{{ .text }}&rdquo;</p>
+</div>
+
+  {{- else if eq .type "section" }}
+<div class="story__section">
+  <div class="story__section-head">
+    <span class="story__kicker">{{ .kicker }}</span>
+    <h2>{{ .title }}</h2>
+  </div>
+  <div class="grid">
+    <div class="story__columns">
+      {{- range .body }}<p>{{ . }}</p>{{ end }}
+    </div>
+    <div class="story__margin">
+      {{- with .marginPull }}<p class="pull">{{ . }}</p>{{ end }}
+      {{- with .marginNote }}<p class="note">{{ . }}</p>{{ end }}
+    </div>
+  </div>
+</div>
+  {{- end }}
+{{- end }}
+
+{{- with .Content }}
+<div class="story__section">
+  <div class="grid"><div class="story__columns">{{ . }}</div></div>
+</div>
+{{- end }}
+
+<div class="more">
+  <div class="more__head">
+    <span class="story__kicker">the other three stories</span>
+  </div>
+  <div class="more__grid">
+    {{- range $stories }}{{ if ne .RelPermalink $.RelPermalink }}
+    <a class="more__item" href="{{ .RelPermalink }}">
+      <div>
+        <h3>{{ .Params.shortTitle | default .Title }}</h3>
+        <p>{{ .Params.blurb }}</p>
+      </div>
+      <span class="link-underline">read the story &rarr;</span>
+    </a>
+    {{- end }}{{ end }}
+  </div>
+</div>
+
+<div class="contact">
+  <h2>{{ site.Params.contact.title }}</h2>
+  <a class="contact__cta" href="mailto:{{ site.Params.contact.email }}">{{ site.Params.contact.cta }}</a>
+</div>
+{{ end }}

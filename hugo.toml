@@ -5,20 +5,32 @@ title = "Lumax"
 [params]
   description = "Field Data. Ecological Analytics. Conservation Impact."
 
+  [params.contact]
+    title = "Tell us what you are trying to understand."
+    cta = "start a project"
+    email = "hello@lumax.ai"
+
 [menu]
   [[menu.main]]
-    name = "Home"
-    url = "/"
+    identifier = "projects"
+    name = "projects"
+    url = "#projects"
     weight = 1
   [[menu.main]]
-    name = "Services"
-    url = "/services/"
+    identifier = "about"
+    name = "about"
+    url = "#about"
     weight = 2
   [[menu.main]]
-    name = "Themes"
-    url = "/themes/"
+    identifier = "services"
+    name = "services"
+    url = "#services"
     weight = 3
   [[menu.main]]
-    name = "About & Team"
-    url = "/about/"
+    identifier = "resources"
+    name = "resources"
+    url = "#resources"
     weight = 4
+
+[markup.goldmark.renderer]
+  unsafe = true

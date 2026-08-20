@@ -15,3 +15,7 @@ jsconfig.json
 hugo_stats.json
 go.sum
 yarn.lock
+# ABC Oracle is a Dinamo TRIAL cut: evaluation/non-commercial only.
+# Kept out of this public repo. Replace with the licensed files and remove
+# this rule before shipping. See readme.md.
+static/fonts/*.otf

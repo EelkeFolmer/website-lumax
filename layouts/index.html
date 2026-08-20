@@ -1,130 +1,176 @@
 {{ define "main" }}
+{{- $stories := (where site.RegularPages "Section" "stories").ByWeight -}}
+{{- $hero := .Params.hero -}}
 
-<!-- HERO -->
 <section class="hero">
-  <div class="wrap hero-inner">
-    <div>
-      <p class="hero-eyebrow">Drone Technology &amp; AI</p>
-      <h1 class="hero-title">Field Data.<br/><strong>Ecological Analytics.</strong><br/>Conservation Impact.</h1>
-      <p class="hero-sub">We combine drone technology with artificial intelligence to monitor and protect biodiversity.</p>
-      <div class="hero-actions">
-        <a href="/services/" class="btn btn-primary">Our Services</a>
-        <a href="/themes/" class="btn btn-outline">Explore Projects</a>
-      </div>
-    </div>
-    <div class="hero-image">
-      <img src="https://lumax.ai/images/thor_nitinat_hu18351777711289924288.jpg" alt="Drone survey over river habitat" loading="eager"/>
-    </div>
-  </div>
-</section>
+  {{- /* Night-only ambient glow, from the export's dark variant. */ -}}
+  <div class="glow glow--teal" style="width:520px;height:520px;left:-180px;top:-160px"></div>
+  <div class="glow glow--green" style="width:460px;height:460px;right:-140px;bottom:-180px"></div>
 
-<!-- PILLARS -->
-<section class="pillars">
-  <div class="wrap">
-    <div class="pillars-grid">
-      <a href="/services/" class="pillar">
-        <span class="pillar-num">01 — Field Data</span>
-        <h3>High-quality ecological data collection</h3>
-        <p>Drones, sensors, and field surveys tailored to each species and habitat.</p>
-      </a>
-      <a href="/services/" class="pillar">
-        <span class="pillar-num">02 — Analytics</span>
-        <h3>AI-powered species detection at scale</h3>
-        <p>Computer vision models that detect, count, and identify species from raw imagery.</p>
-      </a>
-      <a href="/services/" class="pillar">
-        <span class="pillar-num">03 — Impact</span>
-        <h3>End-to-end conservation solutions</h3>
-        <p>Cloud platforms and data portals that put actionable insight in the right hands.</p>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICE 1 -->
-<section class="svc">
-  <div class="wrap">
-    <div class="svc-inner">
-      <div class="svc-img">
-        <img src="https://lumax.ai/images/thor_nitinat_hu18351777711289924288.jpg" alt="Drone field survey" loading="lazy"/>
-      </div>
-      <div class="svc-body">
-        <p class="svc-tag">Field Data Collection</p>
-        <h2>Precision surveys from above and on the ground</h2>
-        <p>We collect high-quality ecological data using drones, sensors, and field surveys — tailored to species and habitat.</p>
-        <ul class="svc-list">
-          <li>Drone-based aerial surveys</li>
-          <li>High-resolution imaging and photogrammetry</li>
-          <li>Large-scale coastal and colony mapping</li>
-        </ul>
-        <a href="/services/" class="svc-link">Our Services <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICE 2 -->
-<section class="svc alt">
-  <div class="wrap">
-    <div class="svc-inner flip">
-      <div class="svc-img">
-        <img src="https://lumax.ai/images/aerialsalmon_detections3_hu17036464710845742753.jpg" alt="AI salmon detection" loading="lazy"/>
-      </div>
-      <div class="svc-body">
-        <p class="svc-tag">Ecological Analytics</p>
-        <h2>Turning raw imagery into ecological insight</h2>
-        <p>Our AI and computer vision models turn raw data into ecological insight — detecting, counting, and identifying species at scale.</p>
-        <ul class="svc-list">
-          <li>Automated species detection and counting</li>
-          <li>Individual re-identification</li>
-          <li>Habitat classification and change detection</li>
-        </ul>
-        <a href="/themes/" class="svc-link">Explore Our Work <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICE 3 -->
-<section class="svc">
-  <div class="wrap">
-    <div class="svc-inner">
-      <div class="svc-img">
-        <img src="https://lumax.ai/images/AIBIRD_portal_hu8198447385398248369.png" alt="Conservation platform portal" loading="lazy"/>
-      </div>
-      <div class="svc-body">
-        <p class="svc-tag">Conservation Impact</p>
-        <h2>Actionable data for researchers and communities</h2>
-        <p>We deliver end-to-end solutions that put actionable information in the hands of researchers, managers, and communities.</p>
-        <ul class="svc-list">
-          <li>Cloud-based monitoring platforms</li>
-          <li>Interactive data portals</li>
-          <li>Training and capacity building</li>
-        </ul>
-        <a href="/themes/" class="svc-link">See Our Projects <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- MISSION -->
-<section class="mission">
-  <div class="wrap">
-    <div class="mission-inner">
+  <div class="hero__track" data-hero-track>
+    {{- range $i, $cell := $hero.cells }}
+    <div class="hero__cell{{ if eq $cell.kind "statement" }} hero__statement{{ end }}">
+      {{- if eq $cell.kind "statement" }}
       <div>
-        <p class="mission-label">Our approach</p>
-        <h2>Science-driven.<br/>Field-tested.<br/><em>Conservation-focused.</em></h2>
-        <p>We work with researchers, conservation organizations, governments, and communities across Europe and North America.</p>
-        <a href="/about/" class="btn btn-primary">Meet the Team</a>
+        <p>{{ $cell.text }}</p>
+        <p class="hero__byline">{{ $cell.byline }}</p>
       </div>
-      <div class="stats-grid">
-        <div class="stat"><div class="stat-num">2+</div><div class="stat-lbl">Continents</div></div>
-        <div class="stat"><div class="stat-num">5</div><div class="stat-lbl">Research Themes</div></div>
-        <div class="stat"><div class="stat-num">AI</div><div class="stat-lbl">Computer Vision</div></div>
-        <div class="stat"><div class="stat-num">∞</div><div class="stat-lbl">Conservation Impact</div></div>
-      </div>
+      {{- else }}
+      {{ partial "figure.html" (dict "src" $cell.photo "alt" $cell.alt "fill" "520x350") }}
+      {{- with $cell.caption }}<span class="hero__caption">{{ . }}</span>{{ end }}
+      {{- if $cell.play }}<span class="hero__play" aria-hidden="true">&#9658;&#xFE0E;</span>{{ end }}
+      {{- end }}
     </div>
+    {{- end }}
+
+    {{- /* First two cells repeated so the mobile carousel can loop. */ -}}
+    {{- range $i, $cell := first 2 $hero.cells }}
+    <div class="hero__cell hero__cell--dup{{ if eq $cell.kind "statement" }} hero__statement{{ end }}" aria-hidden="true">
+      {{- if eq $cell.kind "statement" }}
+      <div>
+        <p>{{ $cell.text }}</p>
+        <p class="hero__byline">{{ $cell.byline }}</p>
+      </div>
+      {{- else }}
+      {{ partial "figure.html" (dict "src" $cell.photo "alt" $cell.alt "fill" "520x350") }}
+      {{- with $cell.caption }}<span class="hero__caption">{{ . }}</span>{{ end }}
+      {{- if $cell.play }}<span class="hero__play" aria-hidden="true">&#9658;&#xFE0E;</span>{{ end }}
+      {{- end }}
+    </div>
+    {{- end }}
+  </div>
+
+  <div class="hero__dots" data-hero-dots aria-hidden="true">
+    {{- range $hero.cells }}<span></span>{{ end }}
   </div>
 </section>
 
+{{- $flock := .Params.flock }}
+<div id="projects" class="flock">
+  <div class="grid flock__head">
+    <div class="col-lead">
+      <span class="eyebrow">projects</span>
+      <h2 class="section-title">{{ $flock.title }}</h2>
+    </div>
+    <div class="col-note">
+      <p class="flock__note">{{ $flock.note }}</p>
+    </div>
+  </div>
+  {{- $words := slice }}{{ $urls := slice }}
+  {{- range $stories }}
+    {{- $words = $words | append (.Params.shortTitle | default .Title) }}
+    {{- $urls = $urls | append .RelPermalink }}
+  {{- end }}
+  <canvas class="flock__canvas" data-flock
+          {{- /* Not "data-urls": Go's autoescaper percent-encodes any attribute
+                 whose name contains "url", which would break JSON.parse. */}}
+          data-words='{{ $words | jsonify }}'
+          data-links='{{ $urls | jsonify }}'
+          aria-hidden="true"></canvas>
+  <div class="flock__caption"><span data-flock-caption></span></div>
+</div>
+
+<div class="projects">
+  {{- range $i, $p := $stories }}
+  <a class="project-row" href="{{ .RelPermalink }}">
+    <div class="project-row__num">{{ printf "%02d" (add $i 1) }}</div>
+    <div class="project-row__title"><h3>{{ .Params.shortTitle | default .Title }}</h3></div>
+    <p class="project-row__blurb">{{ .Params.blurb }}</p>
+    <div class="project-row__partner">{{ .Params.partner }}</div>
+  </a>
+  {{- end }}
+</div>
+
+{{- with $stories }}{{ $teaser := index . 0 }}
+<div class="teaser-wrap">
+  <a class="teaser" href="{{ $teaser.RelPermalink }}">
+    <div class="teaser__head">
+      <span class="teaser__kicker">field notes &mdash; no. 01</span>
+      <h3>{{ $teaser.Params.shortTitle | default $teaser.Title }}</h3>
+    </div>
+    {{- /* Opening paragraphs of the story's first prose section. */ -}}
+    {{- $lede := slice }}
+    {{- range $teaser.Params.blocks }}
+      {{- if and (eq .type "section") (not $lede) }}{{ $lede = first 2 .body }}{{ end }}
+    {{- end }}
+    <div class="teaser__body">
+      {{- range $lede }}<p>{{ . }}</p>{{ end }}
+    </div>
+    <div class="teaser__aside">
+      <p>The project stories are set as field notes &mdash; serif text, recycled paper, captions in the margin.</p>
+      <span class="link-underline">read the story &rarr;</span>
+    </div>
+  </a>
+</div>
+{{- end }}
+
+{{- $about := .Params.about }}
+<div id="about" class="about">
+  <div class="about__head">
+    <span class="eyebrow">about</span>
+    <h2 class="section-title">{{ $about.title }}</h2>
+  </div>
+  <div class="about__body">
+    {{- range $about.paragraphs }}<p>{{ . }}</p>{{ end }}
+  </div>
+</div>
+
+<div class="team">
+  <div class="team__list">
+    {{- range site.Data.team }}
+    <div class="team__member">
+      {{ partial "avatar.html" . }}
+      <div>
+        <h4>{{ .name }}</h4>
+        {{- with .linkedin }}
+        <a class="team__link" href="{{ . }}" target="_blank" rel="noopener">LinkedIn</a>
+        {{- end }}
+        <p>{{ .role }}</p>
+      </div>
+    </div>
+    {{- end }}
+  </div>
+</div>
+
+{{- $services := .Params.services }}
+<div id="services" class="services">
+  <div class="grid">
+    <div class="services__head">
+      <span class="eyebrow">services</span>
+      <h2 class="section-title">{{ $services.title }}</h2>
+    </div>
+    <div class="services__list">
+      {{- range $services.items }}
+      <div class="service">
+        <h3>{{ .name }}</h3>
+        <p>{{ .text }}</p>
+      </div>
+      {{- end }}
+    </div>
+  </div>
+</div>
+
+{{- $resources := .Params.resources }}
+<div id="resources" class="resources">
+  <div class="grid resources__head">
+    <div class="col-lead">
+      <span class="eyebrow">resources</span>
+      <h2 class="section-title">{{ $resources.title }}</h2>
+    </div>
+  </div>
+  <div class="resource-grid">
+    {{- range $resources.items }}
+    <a class="resource" href="{{ .url | default "#" }}">
+      <span>{{ .name }}</span>
+      <p>{{ .text }}</p>
+    </a>
+    {{- end }}
+  </div>
+</div>
+
+{{- $contact := .Params.contact }}
+<div class="contact">
+  <h2>{{ $contact.title }}</h2>
+  <a class="contact__cta" href="mailto:{{ $contact.email }}">{{ $contact.cta }}</a>
+</div>
 {{ end }}

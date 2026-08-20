@@ -1,10 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>{{ partial "head.html" . }}</head>
+<html lang="{{ site.LanguageCode | default "en-us" }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} — {{ site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
+  <link rel="canonical" href="{{ .Permalink }}">
+
+  {{- $tokens := resources.Get "css/tokens.css" -}}
+  {{- $site := resources.Get "css/site.css" -}}
+  {{- $css := slice $tokens $site | resources.Concat "css/lumax.css" -}}
+  {{- if hugo.IsProduction }}{{ $css = $css | minify | fingerprint }}{{ end -}}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+
+  {{- /* Inline and render-blocking on purpose: sets the theme before first paint. */ -}}
+  {{- $themeInit := resources.Get "js/theme-init.js" -}}
+  <script>{{ $themeInit.Content | safeJS }}</script>
+</head>
 <body>
-{{ partial "nav.html" . }}
-<main>{{ block "main" . }}{{ end }}</main>
-{{ partial "footer.html" . }}
-<script src="/js/main.js"></script>
+
+<div class="page{{ if eq .Section "stories" }} page--story{{ end }}">
+  {{ partial "nav.html" . }}
+  {{ block "main" . }}{{ end }}
+  {{ partial "footer.html" . }}
+</div>
+
+{{- /* The concat target name is the resource cache key, so the two bundles
+       must not share one — otherwise every page gets whichever built first. */ -}}
+{{- $js := slice (resources.Get "js/site.js") -}}
+{{- $name := "js/lumax.js" -}}
+{{- if .IsHome -}}
+  {{- $js = $js | append (resources.Get "js/flock.js") -}}
+  {{- $name = "js/lumax-home.js" -}}
+{{- end -}}
+{{- $bundle := $js | resources.Concat $name -}}
+{{- if hugo.IsProduction }}{{ $bundle = $bundle | minify | fingerprint }}{{ end -}}
+<script src="{{ $bundle.RelPermalink }}" defer></script>
+
 </body>
 </html>

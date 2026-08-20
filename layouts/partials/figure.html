@@ -1,0 +1,42 @@
+{{- /*
+  Image slot.
+
+  Sources live in assets/images/photos/ at whatever size they arrive. Hugo
+  crops each to the slot's aspect and emits 1x + 2x, so drone frames can be
+  dropped in untouched without shipping 5 MB to the visitor.
+
+  Renders a labelled placeholder and a build warning when the file is absent,
+  so every unfilled slot is visible on the page.
+
+  Call: {{ partial "figure.html" (dict "src" .photo "alt" .alt "fill" "830x459") }}
+  `src` is the path as written in content, e.g. "/images/photos/river.jpg".
+*/ -}}
+{{- $src := .src -}}
+{{- $alt := .alt | default "" -}}
+{{- $fill := .fill | default "830x459" -}}
+{{- $dims := split $fill "x" -}}
+{{- $w := int (index $dims 0) -}}
+{{- $h := int (index $dims 1) -}}
+
+{{- $img := "" -}}
+{{- with $src }}{{ $img = resources.Get (strings.TrimPrefix "/" .) }}{{ end -}}
+
+{{- if $img -}}
+  {{- $one := $img.Fill (printf "%dx%d Center q82" $w $h) -}}
+  {{- /* Only offer 2x when the source can actually supply it; upscaling would
+         inflate the file for no gain. */ -}}
+  {{- $two := "" -}}
+  {{- if ge $img.Width (mul $w 2) }}{{ $two = $img.Fill (printf "%dx%d Center q72" (mul $w 2) (mul $h 2)) }}{{ end -}}
+  <img src="{{ $one.RelPermalink }}"
+       {{ with $two }}srcset="{{ $one.RelPermalink }} 1x, {{ .RelPermalink }} 2x"{{ end }}
+       width="{{ $w }}" height="{{ $h }}"
+       alt="{{ $alt }}" loading="lazy" decoding="async">
+{{- else -}}
+  {{- warnf "image slot unfilled: %q (alt: %q)" ($src | default "no path set") $alt -}}
+  <div class="ph" role="img" aria-label="{{ $alt }} — photograph pending">
+    <span class="ph__label">
+      <span class="ph__tag">photograph pending</span>
+      {{ $alt }}
+    </span>
+  </div>
+{{- end -}}

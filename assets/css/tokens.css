@@ -1,0 +1,87 @@
+/* ==========================================================================
+   Lumax — design tokens
+
+   The design export used only three tokens from the supplied design system
+   (--font-display, --font-body, --radius-full) and hardcoded every colour
+   inline. Those inline hex values are lifted here into named roles, so the
+   day/night variants collapse to one stylesheet.
+
+   FONT LICENCE: ABC Oracle Trial is Dinamo's evaluation cut — non-commercial
+   only. Do not ship to lumax.ai until a production licence is in place.
+   To swap: drop the licensed files into static/fonts/ and change the two
+   --font-* values below. Nothing else references the family.
+   ========================================================================== */
+
+@font-face {
+  font-family: 'ABC Oracle Trial';
+  src: url('/fonts/ABCOracleTrial-Medium.otf') format('opentype');
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-display: 'ABC Oracle Trial', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'ABC Oracle Trial', 'Helvetica Neue', Arial, sans-serif;
+  --font-serif: 'Times New Roman', Times, serif;
+
+  --radius-full: 999px;
+
+  /* Layout — the export's desktop canvas was 1040px with 44px gutters */
+  --page-max: 1040px;
+  --gutter: 44px;
+  --grid-gap: 26px;
+
+  /* ---- Day (default) ---- */
+  --ground: #ffffff;
+  --ground-story: #e7e4da;
+  --ground-nav: rgba(255, 255, 255, 0.94);
+  --surface: #f5f4f0;
+  --surface-2: #e7e4da;
+
+  --ink: #14140f;
+  --ink-hover: #4a483f;
+  --ink-serif: #26251f;
+  --ink-body: #3a3931;
+  --ink-muted: #6d6b61;
+  --ink-faint: #8a887d;
+  --on-image: #ffffff;
+
+  --line: #e2e0d9;
+  --line-2: #cfcabb;
+  --line-3: #d5d2c9;
+
+  /* Ambient glow orbs — day has none; night switches them on */
+  --glow-teal: transparent;
+  --glow-green: transparent;
+  --glow-moss: transparent;
+  --glow-opacity: 0;
+}
+
+/* ---- Night ----
+   Applied by theme-init.js on <html data-theme="dark">. The :not([data-theme])
+   guard lets the OS preference drive it while still allowing a manual pin. */
+:root[data-theme='dark'] {
+  --ground: #0c1e1a;
+  --ground-story: #0c1e1a;
+  --ground-nav: rgba(12, 30, 26, 0.92);
+  --surface: rgba(234, 239, 233, 0.07);
+  --surface-2: rgba(234, 239, 233, 0.07);
+
+  --ink: #eaefe9;
+  --ink-hover: rgba(234, 239, 233, 0.7);
+  --ink-serif: rgba(234, 239, 233, 0.84);
+  --ink-body: rgba(234, 239, 233, 0.8);
+  --ink-muted: rgba(234, 239, 233, 0.62);
+  --ink-faint: rgba(234, 239, 233, 0.5);
+  --on-image: #ffffff;
+
+  --line: rgba(234, 239, 233, 0.16);
+  --line-2: rgba(234, 239, 233, 0.16);
+  --line-3: rgba(234, 239, 233, 0.16);
+
+  --glow-teal: rgba(46, 132, 140, 0.34);
+  --glow-green: rgba(63, 158, 116, 0.4);
+  --glow-moss: rgba(126, 186, 132, 0.28);
+  --glow-opacity: 1;
+}
