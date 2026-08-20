@@ -628,6 +628,17 @@ img { max-width: 100%; }
   margin: 0;
 }
 
+.story__collaborators { margin-top: 14px; }
+.story__credits-label {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: lowercase;
+  color: var(--ink-faint);
+  margin-bottom: 4px;
+}
+.story__credits .link-underline { font-size: 9.5px; }
+
 .story__figure {
   display: grid;
   grid-template-columns: repeat(12, 1fr);

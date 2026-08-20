@@ -21,6 +21,17 @@
       {{ .Params.partner }}<br>{{ .Params.status }}
       {{- with .Params.creditNote }}<br><br>{{ . }}{{ end }}
     </p>
+    {{- with .Params.collaborators }}
+    <p class="story__credits story__collaborators">
+      <span class="story__credits-label">with</span>
+      {{- range . }}<br>{{ . }}{{ end }}
+    </p>
+    {{- end }}
+    {{- with .Params.link }}
+    <p class="story__credits">
+      <a class="link-underline" href="{{ .url }}" target="_blank" rel="noopener">{{ .label }} &rarr;</a>
+    </p>
+    {{- end }}
   </div>
 </div>
 

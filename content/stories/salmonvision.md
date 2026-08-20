@@ -2,8 +2,15 @@
 title: "Salmon Vision"
 shortTitle: "Salmon Vision"
 weight: 1
-partner: "with the Pacific Salmon Commission"
+partner: "with the Pacific Salmon Foundation"
 status: "Ongoing"
+collaborators:
+  - "Wild Salmon Center"
+  - "Simon Fraser University"
+  - "First Nations, resource managers and coastal communities across British Columbia"
+link:
+  label: "salmonvision.org"
+  url: "https://salmonvision.org"
 creditNote: "Placeholder copy throughout"
 blurb: "Escapement surveys are expensive and invasive, so most rivers go uncounted. Underwater video, sonar and detection models count returning fish while the season is still running."
 standfirst: "Counting a salmon run used to mean standing in a river for a season. We are teaching cameras and sonar to do it, on more rivers than anyone could ever staff."
@@ -47,6 +54,8 @@ blocks:
       - "Aerial survey fills in the rest of the river — where the fish are spawning, which channels are open this year, how the gravel has moved since spring. The counts and the maps are built to be read together, not filed separately."
       - "A cheaper count is not really the point. The point is that a cheap count can be repeated — on more rivers, more often, for longer — and repetition is what turns a number into a trend somebody can act on."
       - "Where this is running, managers watch a run develop instead of reconstructing it afterwards. Restoration gets judged on the fish that came back rather than the metres of gravel laid."
+      - "None of this is ours alone. The Pacific Salmon Foundation, the Wild Salmon Center and Simon Fraser University each carry part of the work, and on the rivers it is done alongside First Nations, resource managers and coastal communities across British Columbia. Who counts a river is not a detail; it decides which rivers get counted at all."
+      - "The stations feed a web application that takes a season from upload, through model analysis, to human verification, in one place. Anyone reading a count can see which frames the model was unsure about and who checked them."
       - "None of it removes the need for people in the field. Somebody still has to choose where a station goes, and notice when a model has quietly started counting driftwood. The work moves from tallying to judgement, which is where it belonged."
     marginPull: "Video when the water is clear. Sonar when it is not."
     marginNote: "Margin note placeholder."
