@@ -5,7 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} — {{ site.Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
-  <link rel="canonical" href="{{ .Permalink }}">
+  {{- /* Canonical points at the production baseURL, so it is wrong on any
+         preview deploy. Previews also get noindex so a leaked link cannot
+         be crawled. */ -}}
+  {{ if hugo.IsProduction }}<link rel="canonical" href="{{ .Permalink }}">
+  {{ else }}<meta name="robots" content="noindex, nofollow">{{ end }}
 
   {{- $tokens := resources.Get "css/tokens.css" -}}
   {{- $site := resources.Get "css/site.css" -}}
