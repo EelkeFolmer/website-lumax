@@ -3,19 +3,17 @@ title: "Lumax"
 hero:
   cells:
     - kind: photo
-      photo: "/images/photos/survey-flight-over-an-icelandic-glacial-valley.jpg"
-      alt: "Survey flight over an Icelandic glacial valley"
+      photo: "/images/photos/ile-aux-oiseaux.jpg"
+      alt: "A seabird colony on Île aux Oiseaux, from the air"
     - kind: statement
       text: "Founded on principles of scientific rigor and lasting partnerships, we transform complex environmental data into actionable insights."
       byline: "Thor Veen & Eelke Folmer"
     - kind: photo
-      photo: "/images/photos/aerial-view-of-a-retreating-glacier-tongue.jpg"
-      alt: "Aerial view of a retreating glacier tongue"
-      caption: "The glacier melt series, 1999–2019"
+      photo: "/images/photos/the-nitinat-river-from-the-air.jpg"
+      alt: "The Nitinat River from the air"
     - kind: photo
-      photo: "/images/photos/field-interview-with-a-lumax-researcher.jpg"
-      alt: "Field interview with a Lumax researcher"
-      play: true
+      photo: "/images/photos/thor-veen-with-survey-gear-on-the-nitinat-river.jpg"
+      alt: "Thor Veen with survey gear on the Nitinat River"
 
 flock:
   title: "Four stories, each on its own page."
