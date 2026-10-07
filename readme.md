@@ -100,10 +100,9 @@ hugo --logLevel warn 2>&1 | grep "image slot unfilled"
 
 Anyone without a `photo:` falls back to an initials mark — the treatment the design system specifies for missing team photos.
 
-**8 of 10 filled**, recovered from the `main` branch's own `data/team.yaml`. Still missing:
+**11 of 12 filled**. Still missing:
 
 - Geert Aarts
-- Norbert Stellaard
 
 To add one: drop a square-ish JPG into `assets/images/team/` and add a `photo:` line. ~600px square or larger is plenty. Note `will-atlas.jpg` is only 200×200 — fine at 48px display, but worth replacing if the avatar ever grows.
 
