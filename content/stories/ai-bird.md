@@ -14,7 +14,7 @@ standfirst: "Many seabirds come ashore only to breed, and then crowd into a few 
 blocks:
   - type: "figure"
     alt: "A breeding colony photographed from survey altitude"
-    photo: "/images/photos/a-breeding-colony-photographed-from-survey-altitude.jpg"
+    photo: "/images/photos/west-african-crested-tern-colony-jeta-guinea-bissau.jpg"
     caption: "A West African crested tern colony on Jeta, Guinea-Bissau. AI-BIRD has its roots in colonies like this one."
     credit: "Eelke Folmer and Thor Veen, 12 May 2019."
   - type: "section"
@@ -55,7 +55,7 @@ blocks:
     marginNote: "One flight over a 70 ha gull colony: 3,233 photos from 37 m, stitched into an orthomosaic at 10.4 mm per pixel."
   - type: "figure"
     alt: "Hegewiersterfjild from the air in May"
-    photo: "/images/photos/survey-flight-along-the-colony-edge.jpg"
+    photo: "/images/photos/hegewiersterfjild-near-harlingen-from-the-air.jpg"
     caption: "Hegewiersterfjild near Harlingen, managed by Natuurmonumenten: a lagoon with islands and creeks. It is an important breeding site for black-headed gulls, avocets, common terns and meadow birds."
     credit: "Eelke Folmer, May 2025."
   - type: "section"
