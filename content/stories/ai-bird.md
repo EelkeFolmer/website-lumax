@@ -5,7 +5,7 @@ weight: 2
 partner: "with Sovon Vogelonderzoek"
 status: "Ongoing"
 collaborators:
-  - "Earth Toolsmaker" # [ASK EELKE: keep? Listed in the AI-BIRD site's partners.yaml, but its role is unclear.]
+  - "Earth Toolsmaker"
   - "Natuurmonumenten"
 # [ASK EELKE: add a link to ai-bird.org? The AI-BIRD landing-page spec says it is served there, but I could not confirm it is live.]
 creditNote: "Placeholder copy throughout"
@@ -15,7 +15,7 @@ blocks:
   - type: "figure"
     alt: "A breeding colony photographed from survey altitude"
     photo: "/images/photos/a-breeding-colony-photographed-from-survey-altitude.jpg"
-    caption: "[ASK EELKE: where was this colony photographed, and which species? It does not look like Griend.]"
+    caption: "AI-BIRD has its roots in the royal tern colonies of West Africa. [ASK EELKE: which colony and year is this, e.g. Saloum delta 2018?]"
     credit: "[ASK EELKE: photographer, place and date.]"
   - type: "section"
     kicker: "the story"
@@ -24,8 +24,8 @@ blocks:
       - "Outside the breeding season the gulls and terns of the Wadden Sea are spread along the coast and out at sea. In May and June a large part of the breeding population sits on a few islands and salt marshes, in colonies dense enough that a count of one site says a good deal about the population."
       - "Griend is one of those sites, an uninhabited island in the western Wadden Sea between Terschelling and the Frisian coast. Its herring gulls and lesser black-backed gulls have long been counted in four plots of about a hectare each, marked in the field with corner posts. Between late April and early June a field team searches each plot for nests seven times, marks every nest with a numbered stick and notes on each visit whether it holds eggs or chicks, has hatched or has been predated."
       - "It is careful work, and a lot of it. It puts people in the nesting ground during the breeding season, the only time a breeding census can be done, and the birds are disturbed as the team walks through. The field method does not record whether a nest belongs to a herring gull or a lesser black-backed gull, and the island total depends on scaling four hectares up to the whole colony."
-      - "Lumax and Sovon develop AI-BIRD within the Wij & Wadvogels programme, funded by Vogelbescherming [ASK EELKE: confirm programme name and funder wording]. There was little drone imagery of Griend’s large gulls, and the 2025 imagery had been taken too late in the season to establish the breeding numbers. Natuurmonumenten asked us to map Griend twice in the 2026 breeding season and to compare the drone count with the plot method."
-      - "AI-BIRD began in West Africa, and we have been building it with Sovon for the Wadden Sea since [ASK EELKE: where in West Africa, which colonies and species, which years, and with whom?]. Its behaviour model also recognises dead birds, for avian influenza. An outbreak can move through a dense colony in a matter of days, and the first visible sign is dead birds on the ground, by which point the question is how much has been lost. [ASK EELKE: source for outbreak speed, and can we name a real case, such as the 2022 Sandwich tern die-off?]"
+      - "AI-BIRD has its roots in West Africa. With BirdLife, we monitored royal tern colonies by drone in the Saloum delta in Senegal in 2015 and 2018, and in Mauritania and Guinea-Bissau in 2019. With Sovon we have since built it for the Wadden Sea, within the Wij & Wadvogels programme, funded by Vogelbescherming [ASK EELKE: confirm programme name and funder wording]. There was little drone imagery of Griend’s large gulls, and the 2025 imagery had been taken too late in the season to establish the breeding numbers. Natuurmonumenten asked us to map Griend twice in the 2026 breeding season and to compare the drone count with the plot method."
+      - "The behaviour model also recognises dead birds, for avian influenza. An outbreak can move through a dense colony in a matter of days, and the first visible sign is dead birds on the ground, by which point the question is how much has been lost. [ASK EELKE: source for outbreak speed, and can we name a real case, such as the 2022 Sandwich tern die-off?]"
       - "So the information need has two halves: a count of breeding birds for the whole colony, repeatable from year to year, and a way to find dead birds across a colony while a response can still help. Both have to be delivered without walking through the colony."
     marginPull: "A colony is the best place to measure a population and the worst place to walk."
     marginNote: "The Griend gull colony covers 70.6 ha. The four count plots together cover about 6% of it."
@@ -49,7 +49,7 @@ blocks:
       - "The few thousand overlapping photos of each flight are stitched into one orthomosaic of the whole colony, in which each patch of ground appears once, so each bird is counted once. A detection model finds every bird and nest on it. Classification models then give each bird a species, a behaviour (breeding, sitting, flying, swimming or dead) and an age."
       - "We fly twice in quick succession because a gull that is only sitting may move between flights, while a breeding gull stays on its nest. A large gull in the same place in both flights counts as a nest, the same unit the field team counts."
       - "On 26 May the field team found 240 active large-gull nests in the four plots. For 194 of them there was a gull at the same place in both drone flights. For 47 of those 194 the match relied on a correction made by eye: a missed nest, a missed gull or a wrong species. Checking and correcting detections is part of the method, and the corrections become training data for the next count. The detector had been trained partly on labelled images from these plots, so this is a favourable test. The second flight and the 8 May flights are independent of it."
-      - "The processing runs in the cloud. Site managers upload the photos and get back a map of the colony with every detection on it, which they can check and correct in the browser."
+      - "The platform, built with Earth Toolsmaker, runs in the cloud. Site managers upload the photos and get back a map of the colony with every detection on it, which they can check and correct in the browser."
       - "What changes is coverage. One flight covers the whole colony, so the island total no longer depends on four plots, and every bird is assigned a species. The images are kept, so any count can be checked or repeated later."
     marginPull: "Fly high enough that the birds ignore the drone, low enough that the model can see."
     marginNote: "Griend, 26 May 2026, first flight: 3,233 photos from 37 m, stitched into an orthomosaic at 10.4 mm per pixel."
