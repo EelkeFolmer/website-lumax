@@ -34,11 +34,11 @@ blocks:
   - type: "figure-pair"
     items:
       - alt: "Île aux Pélicans, a small rocky island in the Banc d’Arguin, seen from a distance"
-        photo: "/images/photos/DJI_0009_crop.jpg"
+        photo: "/images/photos/ile-aux-pelicans-banc-d-arguin-from-a-distance.jpg"
         caption: "Île aux Pélicans, a small rocky island in the Banc d’Arguin, Mauritania, seen from a distance."
         credit: "Eelke Folmer and Thor Veen, 17 May 2019."
       - alt: "Île aux Pélicans from almost directly above, with its colony of West African crested terns, pelicans and cormorants"
-        photo: "/images/photos/DJI_0040_crop.jpg"
+        photo: "/images/photos/ile-aux-pelicans-tern-pelican-and-cormorant-colony-from-above.jpg"
         caption: "The same island from almost directly above, with its breeding colony of West African crested terns, pelicans and cormorants. Counting them from land would disturb many birds."
         credit: "Eelke Folmer and Thor Veen, 17 May 2019."
   - type: "section"
