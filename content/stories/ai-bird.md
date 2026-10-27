@@ -5,7 +5,7 @@ weight: 2
 partner: "with Sovon Vogelonderzoek"
 status: "Ongoing"
 collaborators:
-  - "Earth Toolsmaker"
+  - "Earth Toolsmaker" # [ASK EELKE: keep? Listed in the AI-BIRD site's partners.yaml, but its role is unclear.]
   - "Natuurmonumenten"
 # [ASK EELKE: add a link to ai-bird.org? The AI-BIRD landing-page spec says it is served there, but I could not confirm it is live.]
 creditNote: "Placeholder copy throughout"
@@ -25,7 +25,7 @@ blocks:
       - "Griend is one of those sites, an uninhabited island in the western Wadden Sea between Terschelling and the Frisian coast. Its herring gulls and lesser black-backed gulls have long been counted in four plots of about a hectare each, marked in the field with corner posts. Between late April and early June a field team searches each plot for nests seven times, marks every nest with a numbered stick and notes on each visit whether it holds eggs or chicks, has hatched or has been predated."
       - "It is careful work, and a lot of it. It puts people in the nesting ground during the breeding season, the only time a breeding census can be done, and the birds are disturbed as the team walks through. The field method does not record whether a nest belongs to a herring gull or a lesser black-backed gull, and the island total depends on scaling four hectares up to the whole colony."
       - "Lumax and Sovon develop AI-BIRD within the Wij & Wadvogels programme, funded by Vogelbescherming [ASK EELKE: confirm programme name and funder wording]. There was little drone imagery of Griend’s large gulls, and the 2025 imagery had been taken too late in the season to establish the breeding numbers. Natuurmonumenten asked us to map Griend twice in the 2026 breeding season and to compare the drone count with the plot method."
-      - "AI-BIRD began in a project on avian influenza monitoring with Earth Toolsmaker and Sovon. An outbreak can move through a dense colony in a matter of days, and the first visible sign is dead birds on the ground, by which point the question is how much has been lost. [ASK EELKE: source for outbreak speed, and can we name a real case, such as the 2022 Sandwich tern die-off?]"
+      - "AI-BIRD began in West Africa, and we have been building it with Sovon for the Wadden Sea since [ASK EELKE: where in West Africa, which colonies and species, which years, and with whom?]. Its behaviour model also recognises dead birds, for avian influenza. An outbreak can move through a dense colony in a matter of days, and the first visible sign is dead birds on the ground, by which point the question is how much has been lost. [ASK EELKE: source for outbreak speed, and can we name a real case, such as the 2022 Sandwich tern die-off?]"
       - "So the information need has two halves: a count of breeding birds for the whole colony, repeatable from year to year, and a way to find dead birds across a colony while a response can still help. Both have to be delivered without walking through the colony."
     marginPull: "A colony is the best place to measure a population and the worst place to walk."
     marginNote: "The Griend gull colony covers 70.6 ha. The four count plots together cover about 6% of it."
