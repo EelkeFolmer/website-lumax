@@ -1,0 +1,101 @@
+<svg class="wf" xmlns="http://www.w3.org/2000/svg" viewBox="20 40 1000 310" width="1000" height="310" aria-hidden="true" focusable="false">
+  <defs>
+    <marker id="wf-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="wf-head" d="M0,0 L10,5 L0,10 z"/>
+    </marker>
+    <marker id="wf-arrow-faint" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path class="wf-head wf-head--faint" d="M0,0 L10,5 L0,10 z"/>
+    </marker>
+  </defs>
+
+  <!-- Side entry: bring your own orthophoto -->
+  <rect class="wf-pill" x="292" y="46" width="200" height="22" rx="11"/>
+  <text class="wf-pill-text" x="392" y="61">or bring your own orthophoto</text>
+  <path class="wf-line wf-line--faint" d="M492,57 H520 V76" marker-end="url(#wf-arrow-faint)"/>
+
+  <!-- Boxes -->
+  <rect class="wf-box" x="20" y="80" width="172" height="205" rx="8"/>
+  <rect class="wf-box" x="227" y="80" width="172" height="205" rx="8"/>
+  <rect class="wf-box" x="434" y="80" width="172" height="205" rx="8"/>
+  <rect class="wf-box wf-box--key" x="641" y="80" width="172" height="205" rx="8"/>
+  <rect class="wf-box" x="848" y="80" width="172" height="205" rx="8"/>
+
+  <!-- Icons -->
+  <circle class="wf-dot" cx="106" cy="110" r="17"/>
+  <g class="wf-glyph">
+    <path d="M100,104 L112,116 M112,104 L100,116"/>
+    <circle cx="99" cy="103" r="3"/><circle cx="113" cy="103" r="3"/>
+    <circle cx="99" cy="117" r="3"/><circle cx="113" cy="117" r="3"/>
+  </g>
+  <circle class="wf-dot" cx="313" cy="110" r="17"/>
+  <g class="wf-glyph">
+    <rect x="304" y="102" width="11" height="11" rx="1"/>
+    <rect x="311" y="107" width="11" height="11" rx="1"/>
+  </g>
+  <circle class="wf-dot" cx="520" cy="110" r="17"/>
+  <g class="wf-glyph">
+    <circle cx="518" cy="108" r="6"/><path d="M522.5,112.5 L527,117"/>
+  </g>
+  <circle class="wf-dot wf-dot--key" cx="727" cy="110" r="17"/>
+  <g class="wf-glyph wf-glyph--key">
+    <path d="M719,110 L725,116 L736,104"/>
+  </g>
+  <circle class="wf-dot" cx="934" cy="110" r="17"/>
+  <g class="wf-glyph">
+    <path d="M926,118 H942 M929,117 V109 M934,117 V103 M939,117 V112"/>
+  </g>
+
+  <!-- Titles -->
+  <text class="wf-title" x="106" y="150">Plan &amp; fly</text>
+  <text class="wf-title" x="313" y="150">Upload &amp; stitch</text>
+  <text class="wf-title" x="520" y="150">Detect &amp; classify</text>
+  <text class="wf-title wf-title--key" x="727" y="150">Review &amp; correct</text>
+  <text class="wf-title" x="934" y="150">Analyse &amp; monitor</text>
+
+  <!-- Body text -->
+  <text class="wf-body" x="106" y="174">
+    <tspan x="106">Flown in parallel lines at</tspan>
+    <tspan x="106" dy="17">30–40 m, about 1 cm</tspan>
+    <tspan x="106" dy="17">per pixel. Two flights in</tspan>
+    <tspan x="106" dy="17">quick succession tell</tspan>
+    <tspan x="106" dy="17">breeding birds from</tspan>
+    <tspan x="106" dy="17">sitting ones.</tspan>
+  </text>
+  <text class="wf-body" x="313" y="174">
+    <tspan x="313">Geotagged photos are</tspan>
+    <tspan x="313" dy="17">uploaded in the web app</tspan>
+    <tspan x="313" dy="17">and stitched into one</tspan>
+    <tspan x="313" dy="17">orthophoto of the</tspan>
+    <tspan x="313" dy="17">whole colony.</tspan>
+  </text>
+  <text class="wf-body" x="520" y="174">Two-stage model</text>
+  <text class="wf-body wf-body--key" x="727" y="174">
+    <tspan x="727">An ecologist checks</tspan>
+    <tspan x="727" dy="17">the detections on the</tspan>
+    <tspan x="727" dy="17">map and corrects</tspan>
+    <tspan x="727" dy="17">them where needed.</tspan>
+  </text>
+  <text class="wf-body" x="934" y="174">
+    <tspan x="934">Counts per species,</tspan>
+    <tspan x="934" dy="17">age and behaviour, on</tspan>
+    <tspan x="934" dy="17">the map and as a</tspan>
+    <tspan x="934" dy="17">download, with trends</tspan>
+    <tspan x="934" dy="17">across repeat surveys.</tspan>
+  </text>
+
+  <!-- Detect & classify sub-steps -->
+  <rect class="wf-step" x="443" y="186" width="154" height="26" rx="5"/>
+  <text class="wf-step-text" x="520" y="203">1 · Detect birds and nests</text>
+  <rect class="wf-step" x="443" y="218" width="154" height="40" rx="5"/>
+  <text class="wf-step-text" x="520" y="234"><tspan x="520">2 · Classify species,</tspan><tspan x="520" dy="14">age and behaviour</tspan></text>
+
+  <!-- Forward arrows -->
+  <line class="wf-line" x1="195" y1="182" x2="223" y2="182" marker-end="url(#wf-arrow)"/>
+  <line class="wf-line" x1="402" y1="182" x2="430" y2="182" marker-end="url(#wf-arrow)"/>
+  <line class="wf-line" x1="609" y1="182" x2="637" y2="182" marker-end="url(#wf-arrow)"/>
+  <line class="wf-line" x1="816" y1="182" x2="844" y2="182" marker-end="url(#wf-arrow)"/>
+
+  <!-- Feedback loop: corrections become training data -->
+  <path class="wf-line" d="M727,287 V318 H520 V291" marker-end="url(#wf-arrow)"/>
+  <text class="wf-loop" x="623.5" y="338">corrections become training data for the next count</text>
+</svg>

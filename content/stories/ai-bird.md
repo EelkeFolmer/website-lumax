@@ -4,8 +4,6 @@ shortTitle: "AI-BIRD"
 weight: 2
 partner: "with Sovon Vogelonderzoek"
 status: "Ongoing"
-collaborators:
-  - "Earth Toolsmaker"
 link:
   label: "ai-bird.org"
   url: "https://ai-bird.org"
@@ -53,6 +51,10 @@ blocks:
       - "What changes is coverage. One flight covers the whole colony, so the total no longer depends on a few sample plots, and every bird is assigned a species. The images are kept, so any count can be checked or repeated later."
     marginPull: "Fly high enough that the birds ignore the drone, low enough that the model can see."
     marginNote: "One flight over a 70 ha gull colony: 3,233 photos from 37 m, stitched into an orthomosaic at 10.4 mm per pixel."
+  - type: "diagram"
+    src: "diagrams/ai-bird-workflow.svg"
+    alt: "The AI-BIRD workflow in five steps: plan and fly, upload and stitch, detect and classify, review and correct, analyse and monitor. Corrections from the review step become training data for the next count."
+    caption: "From flight to count. What an ecologist corrects in the review step becomes training data for the next count."
   - type: "figure"
     alt: "Hegewiersterfjild from the air in May"
     photo: "/images/photos/hegewiersterfjild-near-harlingen-from-the-air.jpg"
@@ -70,4 +72,12 @@ blocks:
     marginNote: "At 18 places a gull sat in the same spot in both flights with no active field nest. At five of them the field team found a nest later: the pair was already there, and the first egg came later."
   - type: "quote"
     text: "Two weeks late, a mortality count only tells you what was lost."
+  - type: "resources"
+    items:
+      - label: "ai-bird.org — the AI-BIRD project website"
+        url: "https://ai-bird.org/"
+      - label: "AI-BIRD app — upload a drone survey and review the detections"
+        url: "https://app.ai-bird.org/"
+      - label: "AI-BIRD manual — documentation for users of the app"
+        url: "https://manual.ai-bird.org/"
 ---

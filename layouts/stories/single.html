@@ -61,6 +61,24 @@
   <p>&ldquo;{{ .text }}&rdquo;</p>
 </div>
 
+  {{- else if eq .type "diagram" }}
+<div class="story__diagram">
+  <div class="story__diagram-frame" role="img" aria-label="{{ .alt }}">
+    {{- with resources.Get .src }}{{ .Content | safeHTML }}{{ else }}{{ errorf "diagram not found: %q" $.src }}{{ end }}
+  </div>
+  {{- with .caption }}<p class="lede">{{ . }}</p>{{ end }}
+</div>
+
+  {{- else if eq .type "resources" }}
+<div class="story__resources">
+  <span class="story__resources-label">resources</span>
+  <div class="story__resources-list">
+    {{- range .items }}
+    <a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>
+    {{- end }}
+  </div>
+</div>
+
   {{- else if eq .type "section" }}
 <div class="story__section">
   <div class="story__section-head">
