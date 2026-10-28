@@ -66,4 +66,5 @@ blocks:
     marginNote: "Margin note placeholder."
   - type: "quote"
     text: "A digital elevation model of water is not a digital elevation model."
+  - type: "resources"
 ---

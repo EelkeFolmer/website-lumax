@@ -14,6 +14,9 @@
 <div class="story__masthead">
   <div class="col-title">
     <h1>{{ .Params.shortTitle | default .Title }}</h1>
+    {{- with .Params.subtitle }}
+    <p class="story__subtitle">{{ . }}</p>
+    {{- end }}
     <p class="story__standfirst">{{ .Params.standfirst }}</p>
   </div>
   <div class="col-credits">
@@ -73,6 +76,12 @@
 <div class="story__resources">
   <span class="story__resources-label">resources</span>
   <div class="story__resources-list">
+    {{- $slug := $.File.ContentBaseName }}
+    {{- range sort (where (site.Data.publications | default slice) "projects" "intersect" (slice $slug)) "year" "desc" }}
+    <a href="{{ .url }}" target="_blank" rel="noopener">{{ .type | title }} &mdash; {{ .authors }} ({{ .year }}). {{ .title }}. <em>{{ .venue }}</em>.
+      {{- with .language }} In {{ . }}.{{ end }}
+      {{- if .openAccess }} <span class="story__resources-tag">open access</span>{{ end }}</a>
+    {{- end }}
     {{- range .items }}
     <a href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>
     {{- end }}
