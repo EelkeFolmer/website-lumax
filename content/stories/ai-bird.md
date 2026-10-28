@@ -49,7 +49,6 @@ blocks:
       - "An ecologist then checks the detections on the map and corrects them where needed. Each correction becomes training data, so the models learn from every survey we fly. A model only knows the species it was trained on; adding great black-backed gull, common gull, oystercatcher and redshank is next."
       - "What changes is the cost to the birds and the time to a result. Nobody walks into the colony, and one flight covers all of it, so the total no longer depends on a few sample plots. The platform, built with Earth Toolsmaker, runs in the cloud: site managers upload the photos and get the counts back soon after the flight, on a map with every detection. Every bird gets a species, and the images are kept, so any count can be checked or repeated later."
     marginPull: "21,000 birds in 4.5 hours, against about three weeks of counting by hand."
-    marginNote: "On Dutch colony surveys the detector found 88% of the birds present, and 98% of its detections were correct. Species, age and behaviour were right 95% of the time on average, over 10 species and 1,398 checked detections."
   - type: "diagram"
     src: "diagrams/ai-bird-workflow.svg"
     alt: "The AI-BIRD workflow in five steps: plan and fly, upload and stitch, detect and classify, review and correct, analyse and monitor. Corrections from the review step become training data for the next count."
