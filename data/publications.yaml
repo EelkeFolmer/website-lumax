@@ -1,0 +1,52 @@
+# Papers and reports, one entry each. Story pages list the entries whose
+# `projects` include the story's file name (e.g. ai-bird), newest first,
+# above the story's own resource links.
+#
+# type: paper | report | brochure | dataset | software
+# url: DOI link for papers; the publisher's or partner's page for reports
+# language: only when not English
+# openAccess: true when free to read
+
+- type: paper
+  title: "21 000 birds in 4.5 h: efficient large-scale seabird detection with machine learning"
+  authors: "Kellenberger, B., Veen, T., Folmer, E. & Tuia, D."
+  year: 2021
+  venue: "Remote Sensing in Ecology and Conservation 7(3): 445–460"
+  url: "https://doi.org/10.1002/rse2.200"
+  openAccess: true
+  projects: [ai-bird]
+
+- type: report
+  title: "Detectie van vogelgriep met de inzet van drones en machine learning in de Waddenzee, resultaten van een pilot studie"
+  authors: "Duijns, S., Manche, P., van Kessel, J. & Folmer, E.O."
+  year: 2025
+  venue: "Sovon-rapport 2025/36, Sovon Vogelonderzoek Nederland, Nijmegen"
+  url: "https://pub.sovon.nl/static/publicaties/Rap_2025-36-Detectie-van-vogelgriep-met-de-inzet-van-drones-en-machine-learning-in-de-Waddenzee-resultaten-van-een-pilotstudie-S2021-107f_LR.pdf"
+  language: "Dutch"
+  projects: [ai-bird]
+
+- type: report
+  title: "Drone-monitoring van de Wierum-kwelder: morfologische en ecologische effecten van erosiemitigatiemaatregelen. Resultaten T0–T6"
+  authors: "Lumax, with the University of Twente"
+  year: 2026
+  venue: "Report for Rijkswaterstaat"
+  url: "https://open.rijkswaterstaat.nl/@301455/drone-monitoring-wierum-kwelder/"
+  language: "Dutch"
+  projects: [codap]
+
+- type: report
+  title: "Drone-monitoring van de Wierum-kwelder: morfologische en ecologische effecten van erosiemaatregelen"
+  authors: "Folmer, E."
+  year: 2025
+  venue: "Lumax, with the University of Twente. Report for Rijkswaterstaat Noord-Nederland"
+  url: "https://open.rijkswaterstaat.nl/@290087/drone-monitoring-wierum-kwelder/"
+  language: "Dutch"
+  projects: [codap]
+
+- type: brochure
+  title: "AI-BIRD: Automated Intelligence for Bird Inventory and Reproduction using Drones"
+  authors: "Lumax & Sovon"
+  year: 2026
+  venue: "Two-page project summary (PDF)"
+  url: "/downloads/ai-bird-two-pager-2026-09.pdf"
+  projects: [ai-bird]
