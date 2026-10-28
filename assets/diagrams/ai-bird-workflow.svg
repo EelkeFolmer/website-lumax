@@ -54,12 +54,11 @@
 
   <!-- Body text -->
   <text class="wf-body" x="106" y="174">
-    <tspan x="106">Flown in parallel lines at</tspan>
-    <tspan x="106" dy="17">30–40 m, about 1 cm</tspan>
-    <tspan x="106" dy="17">per pixel. Two flights in</tspan>
-    <tspan x="106" dy="17">quick succession tell</tspan>
-    <tspan x="106" dy="17">breeding birds from</tspan>
-    <tspan x="106" dy="17">sitting ones.</tspan>
+    <tspan x="106">Flown in parallel lines</tspan>
+    <tspan x="106" dy="17">over the whole colony.</tspan>
+    <tspan x="106" dy="17">Two flights in quick</tspan>
+    <tspan x="106" dy="17">succession tell breeding</tspan>
+    <tspan x="106" dy="17">birds from sitting ones.</tspan>
   </text>
   <text class="wf-body" x="313" y="174">
     <tspan x="313">Geotagged photos are</tspan>
