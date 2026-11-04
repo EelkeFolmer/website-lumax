@@ -25,6 +25,14 @@
   language: "Dutch"
   projects: [ai-bird]
 
+- type: paper
+  title: "Space–time analyses of sediment composition reveals synchronized dynamics at all intertidal flats in the Dutch Wadden Sea"
+  authors: "Folmer, E.O., Bijleveld, A.I., Holthuijsen, S., van der Meer, J., Piersma, T. & van der Veer, H.W."
+  year: 2023
+  venue: "Estuarine, Coastal and Shelf Science 285: 108308"
+  url: "https://doi.org/10.1016/j.ecss.2023.108308"
+  projects: [codap]
+
 - type: report
   title: "Drone-monitoring van de Wierum-kwelder: morfologische en ecologische effecten van erosiemitigatiemaatregelen. Resultaten T0–T6"
   authors: "Folmer, E. & Borsje, B."
