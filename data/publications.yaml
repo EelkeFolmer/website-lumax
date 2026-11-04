@@ -27,9 +27,9 @@
 
 - type: report
   title: "Drone-monitoring van de Wierum-kwelder: morfologische en ecologische effecten van erosiemitigatiemaatregelen. Resultaten T0–T6"
-  authors: "Lumax, with the University of Twente"
+  authors: "Folmer, E. & Borsje, B."
   year: 2026
-  venue: "Report for Rijkswaterstaat"
+  venue: "Lumax, with the University of Twente. Report for Rijkswaterstaat"
   url: "https://open.rijkswaterstaat.nl/@301455/drone-monitoring-wierum-kwelder/"
   language: "Dutch"
   projects: [codap]
