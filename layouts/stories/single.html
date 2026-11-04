@@ -39,9 +39,25 @@
 </div>
 
 {{- range .Params.blocks }}
-  {{- if eq .type "figure" }}
+  {{- if and (eq .type "figure") .wide }}
+{{- /* Full-width figure, uncropped, caption below: lines up with a compare
+       block of the same extent. */ -}}
+{{- $img := resources.Get (strings.TrimPrefix "/" .photo) -}}
+{{- if not $img }}{{ errorf "wide figure: image not found: %q" .photo }}{{ end -}}
+{{- $w := int (math.Min 1040 $img.Width) -}}
+{{- $one := $img.Resize (printf "%dx webp q82" $w) -}}
+{{- $two := "" -}}
+{{- if ge $img.Width (mul $w 2) }}{{ $two = $img.Resize (printf "%dx webp q75" (mul $w 2)) }}{{ end -}}
+{{- $full := $img.Resize (printf "%dx webp q80" (int (math.Min 2400 $img.Width))) -}}
+<div class="story__compare">
+  <img class="compare__img" src="{{ $one.RelPermalink }}"{{ with $two }} srcset="{{ $one.RelPermalink }} 1x, {{ .RelPermalink }} 2x"{{ end }} data-full="{{ $full.RelPermalink }}" width="{{ $one.Width }}" height="{{ $one.Height }}" alt="{{ .alt }}" loading="lazy" decoding="async">
+  <p class="lede">{{ .caption }}</p>
+  {{- with .credit }}<p class="credit">{{ . }}</p>{{ end }}
+</div>
+
+  {{- else if eq .type "figure" }}
 <div class="story__figure">
-  <div class="col-image">{{ partial "figure.html" (dict "src" .photo "alt" .alt "fill" "830x459") }}</div>
+  <div class="col-image">{{ partial "figure.html" (dict "src" .photo "alt" .alt "fill" "830x459" "zoom" true) }}</div>
   <div class="col-caption">
     <p class="lede">{{ .caption }}</p>
     <p class="credit">{{ .credit }}</p>
@@ -52,11 +68,38 @@
 <div class="story__pair">
   {{- range .items }}
   <div>
-    {{ partial "figure.html" (dict "src" .photo "alt" .alt "fill" "400x272") }}
+    {{ partial "figure.html" (dict "src" .photo "alt" .alt "fill" "400x272" "zoom" true) }}
     <p class="lede">{{ .caption }}</p>
     <p class="credit">{{ .credit }}</p>
   </div>
   {{- end }}
+</div>
+
+  {{- else if eq .type "compare" }}
+{{- /* Before/after slider: an invisible range input sets --pos, which clips the
+       "before" image. Both images must share one aspect ratio. */ -}}
+{{- $before := resources.Get (strings.TrimPrefix "/" .before.photo) -}}
+{{- $after := resources.Get (strings.TrimPrefix "/" .after.photo) -}}
+{{- if not (and $before $after) }}{{ errorf "compare block: image not found (%q, %q)" .before.photo .after.photo }}{{ end -}}
+{{- /* Never upscale: cap at the column width, or the source width if smaller. */ -}}
+{{- $w := int (math.Min 1040 $before.Width) -}}
+{{- $b1 := $before.Resize (printf "%dx webp q82" $w) -}}{{- $a1 := $after.Resize (printf "%dx webp q82" $w) -}}
+{{- /* 2x for high-density screens, only when the source can supply it. */ -}}
+{{- $b2 := "" -}}{{- $a2 := "" -}}
+{{- if ge $before.Width (mul $w 2) }}{{ $b2 = $before.Resize (printf "%dx webp q75" (mul $w 2)) }}{{ $a2 = $after.Resize (printf "%dx webp q75" (mul $w 2)) }}{{ end -}}
+<div class="story__compare">
+  <div class="compare" data-compare style="--pos: 50%">
+    <img class="compare__img" src="{{ $a1.RelPermalink }}"{{ with $a2 }} srcset="{{ $a1.RelPermalink }} 1x, {{ .RelPermalink }} 2x"{{ end }} width="{{ $a1.Width }}" height="{{ $a1.Height }}" alt="{{ .after.alt }}" loading="lazy" decoding="async">
+    <div class="compare__before">
+      <img class="compare__img" src="{{ $b1.RelPermalink }}"{{ with $b2 }} srcset="{{ $b1.RelPermalink }} 1x, {{ .RelPermalink }} 2x"{{ end }} width="{{ $b1.Width }}" height="{{ $b1.Height }}" alt="{{ .before.alt }}" loading="lazy" decoding="async">
+    </div>
+    <span class="compare__tag compare__tag--l">{{ .before.label }}</span>
+    <span class="compare__tag compare__tag--r">{{ .after.label }}</span>
+    <div class="compare__handle" aria-hidden="true"></div>
+    <input class="compare__range" type="range" min="0" max="100" value="50" aria-label="Slide to compare {{ .before.label }} with {{ .after.label }}">
+  </div>
+  <p class="lede">{{ .caption }}</p>
+  {{- with .credit }}<p class="credit">{{ . }}</p>{{ end }}
 </div>
 
   {{- else if eq .type "quote" }}

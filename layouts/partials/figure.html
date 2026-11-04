@@ -10,6 +10,7 @@
 
   Call: {{ partial "figure.html" (dict "src" .photo "alt" .alt "fill" "830x459") }}
   `src` is the path as written in content, e.g. "/images/photos/river.jpg".
+  Pass "zoom" true to let a click open the uncropped photo full screen.
 */ -}}
 {{- $src := .src -}}
 {{- $alt := .alt | default "" -}}
@@ -27,8 +28,11 @@
          inflate the file for no gain. */ -}}
   {{- $two := "" -}}
   {{- if ge $img.Width (mul $w 2) }}{{ $two = $img.Fill (printf "%dx%d Center q72" (mul $w 2) (mul $h 2)) }}{{ end -}}
+  {{- $full := "" -}}
+  {{- if .zoom }}{{ $full = $img.Resize (printf "%dx webp q80" (int (math.Min 2400 $img.Width))) }}{{ end -}}
   <img src="{{ $one.RelPermalink }}"
        {{ with $two }}srcset="{{ $one.RelPermalink }} 1x, {{ .RelPermalink }} 2x"{{ end }}
+       {{ with $full }}data-full="{{ .RelPermalink }}"{{ end }}
        width="{{ $w }}" height="{{ $h }}"
        alt="{{ $alt }}" loading="lazy" decoding="async">
 {{- else -}}

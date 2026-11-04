@@ -85,3 +85,33 @@
   paintDots();
   sync();
 })();
+
+/* Before/after slider: the range input drives --pos, which clips the "before" image. */
+document.querySelectorAll('[data-compare]').forEach(function (el) {
+  var range = el.querySelector('input[type=range]');
+  range.addEventListener('input', function () {
+    el.style.setProperty('--pos', range.value + '%');
+  });
+});
+
+/* Click a story photo to see it full screen; click, Esc or the close button to return. */
+(function () {
+  var imgs = document.querySelectorAll('img[data-full]');
+  if (!imgs.length) return;
+  var box = document.createElement('dialog');
+  box.className = 'lightbox';
+  box.innerHTML = '<button class="lightbox__close" type="button" aria-label="Close">×</button><img alt="">';
+  document.body.appendChild(box);
+  var big = box.querySelector('img');
+  box.addEventListener('click', function () { box.close(); });
+  box.addEventListener('close', function () { big.removeAttribute('src'); });
+  imgs.forEach(function (img) {
+    img.tabIndex = 0;
+    img.setAttribute('role', 'button');
+    function open() { big.src = img.dataset.full; big.alt = img.alt; box.showModal(); }
+    img.addEventListener('click', open);
+    img.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+    });
+  });
+})();

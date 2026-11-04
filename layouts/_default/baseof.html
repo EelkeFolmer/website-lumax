@@ -14,7 +14,8 @@
   {{- $tokens := resources.Get "css/tokens.css" -}}
   {{- $site := resources.Get "css/site.css" -}}
   {{- $css := slice $tokens $site | resources.Concat "css/lumax.css" -}}
-  {{- if hugo.IsProduction }}{{ $css = $css | minify | fingerprint }}{{ end -}}
+  {{- if hugo.IsProduction }}{{ $css = $css | minify }}{{ end -}}
+  {{- $css = $css | fingerprint -}}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 
   {{- /* Inline and render-blocking on purpose: sets the theme before first paint. */ -}}
@@ -38,7 +39,9 @@
   {{- $name = "js/lumax-home.js" -}}
 {{- end -}}
 {{- $bundle := $js | resources.Concat $name -}}
-{{- if hugo.IsProduction }}{{ $bundle = $bundle | minify | fingerprint }}{{ end -}}
+{{- if hugo.IsProduction }}{{ $bundle = $bundle | minify }}{{ end -}}
+{{- /* Fingerprint in development too, so a browser never runs a stale cached script. */ -}}
+{{- $bundle = $bundle | fingerprint -}}
 <script src="{{ $bundle.RelPermalink }}" defer></script>
 
 </body>
