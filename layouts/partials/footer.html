@@ -2,6 +2,7 @@
 <div class="footer">
   <span>&copy; {{ now.Year }} Lumax</span>
   <div class="footer__links">
+    <a href="mailto:{{ site.Params.contact.email }}">get in touch</a>
     {{ with $first }}<a href="{{ .RelPermalink }}">project stories</a>{{ end }}
     <button class="theme-toggle" type="button" data-theme-toggle>night theme</button>
     <a href="{{ "imprint/" | relURL }}">imprint</a>

@@ -16,6 +16,15 @@
   openAccess: true
   projects: [ai-bird]
 
+- type: dataset
+  title: "Aerial Seabirds West Africa"
+  authors: "Kellenberger, B., Veen, T., Folmer, E. & Tuia, D."
+  year: 2020
+  venue: "LILA BC. Aerial imagery of a West African seabird colony, with 21,516 point annotations"
+  url: "https://lila.science/datasets/aerial-seabirds-west-africa/"
+  openAccess: true
+  projects: [ai-bird]
+
 - type: report
   title: "Detectie van vogelgriep met de inzet van drones en machine learning in de Waddenzee, resultaten van een pilot studie"
   authors: "Duijns, S., Manche, P., van Kessel, J. & Folmer, E.O."

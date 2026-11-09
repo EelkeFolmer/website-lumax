@@ -29,7 +29,7 @@ title = "Lumax"
   [[menu.main]]
     identifier = "resources"
     name = "resources"
-    url = "#resources"
+    url = "/resources/"
     weight = 4
 
 [markup.goldmark.renderer]
