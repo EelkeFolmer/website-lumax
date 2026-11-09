@@ -3,7 +3,7 @@
   publish = "public"
 
 [build.environment]
-  HUGO_VERSION = "0.134.3"
+  HUGO_VERSION = "0.139.4"
 
 # Previews get noindex instead of a canonical link to lumax.ai
 [context.deploy-preview]

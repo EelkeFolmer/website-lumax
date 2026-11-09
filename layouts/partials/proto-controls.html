@@ -1,0 +1,46 @@
+{{- /* PROTOTYPE controls — day/night + glyph-style toggles pinned to the
+       bottom-right of every page. The glyph choice persists in localStorage
+       and applies site-wide via the data-glyphs attribute on <html>, so it
+       also affects the homepage resource cards. Remove this partial and its
+       include in baseof.html once a direction is chosen. */ -}}
+<style>
+  [data-glyphs="plain"] .rp__glyph::before { display: none; }
+  [data-glyphs="plain"] .rp__glyph { width: 30px; height: 30px; color: var(--ink-faint); margin-left: 0; }
+  [data-glyphs="plain"] .rp__glyph svg { width: 24px; height: 24px; transform: none; }
+  [data-glyphs="plain"] .rp__group:hover .rp__glyph svg,
+  [data-glyphs="plain"] .resource:hover .rp__glyph svg { transform: none; }
+  #rp-proto { position: fixed; right: 20px; bottom: 20px; z-index: 50;
+    display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
+  #rp-proto button {
+    font-family: var(--font-body); font-size: 11.5px; letter-spacing: 0.03em;
+    color: var(--ground); background: var(--ink); border: 0;
+    border-radius: var(--radius-full); padding: 11px 18px; cursor: pointer;
+  }
+</style>
+<div id="rp-proto">
+  <button id="rp-theme" type="button">Mode: Day — tap to switch</button>
+  <button id="rp-glyphs" type="button">Glyphs: Illustrated — tap to switch</button>
+</div>
+<script>
+  (function () {
+    var root = document.documentElement;
+    var GKEY = 'lumax-glyphs';
+    try { if (localStorage.getItem(GKEY) === 'plain') root.setAttribute('data-glyphs', 'plain'); } catch (e) {}
+    var gbtn = document.getElementById('rp-glyphs');
+    var tbtn = document.getElementById('rp-theme');
+    function syncG() { gbtn.textContent = 'Glyphs: ' + (root.getAttribute('data-glyphs') === 'plain' ? 'Plain (faithful)' : 'Illustrated') + ' — tap to switch'; }
+    function syncT() { tbtn.textContent = 'Mode: ' + (root.getAttribute('data-theme') === 'dark' ? 'Night' : 'Day') + ' — tap to switch'; }
+    gbtn.addEventListener('click', function () {
+      var plain = root.getAttribute('data-glyphs') === 'plain';
+      if (plain) { root.removeAttribute('data-glyphs'); } else { root.setAttribute('data-glyphs', 'plain'); }
+      try { localStorage.setItem(GKEY, plain ? 'illustrated' : 'plain'); } catch (e) {}
+      syncG();
+    });
+    tbtn.addEventListener('click', function () {
+      if (window.lumaxTheme) { window.lumaxTheme.toggle(); }
+      else { root.setAttribute('data-theme', root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'); }
+      syncT();
+    });
+    syncG(); syncT();
+  })();
+</script>

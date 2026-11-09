@@ -30,6 +30,8 @@
   {{ partial "footer.html" . }}
 </div>
 
+{{ partial "proto-controls.html" . }}
+
 {{- /* The concat target name is the resource cache key, so the two bundles
        must not share one — otherwise every page gets whichever built first. */ -}}
 {{- $js := slice (resources.Get "js/site.js") -}}
