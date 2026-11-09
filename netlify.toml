@@ -5,6 +5,13 @@
 [build.environment]
   HUGO_VERSION = "0.134.3"
 
+# Previews get noindex instead of a canonical link to lumax.ai
+[context.deploy-preview]
+  command = "hugo -e preview --minify"
+
+[context.branch-deploy]
+  command = "hugo -e preview --minify"
+
 [[headers]]
   for = "/*"
   [headers.values]

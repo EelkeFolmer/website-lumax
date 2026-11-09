@@ -156,21 +156,19 @@
     <div class="col-lead">
       <span class="eyebrow">resources</span>
       <h2 class="section-title">{{ $resources.title }}</h2>
+      {{- with $resources.description }}<p class="resources__desc">{{ . }}</p>{{ end }}
     </div>
   </div>
   <div class="resource-grid">
     {{- range $resources.items }}
     <a class="resource" href="{{ .url | default "#" }}">
-      <span>{{ .name }}</span>
-      <p>{{ .text }}</p>
+      {{- with .glyph }}{{ partial "resource-glyph.html" . }}{{ end }}
+      <div class="resource__meta">
+        <span class="resource__name">{{ .name }}</span>
+        <p>{{ .text }}</p>
+      </div>
     </a>
     {{- end }}
   </div>
-</div>
-
-{{- $contact := .Params.contact }}
-<div class="contact">
-  <h2>{{ $contact.title }}</h2>
-  <a class="contact__cta" href="mailto:{{ $contact.email }}">{{ $contact.cta }}</a>
 </div>
 {{ end }}

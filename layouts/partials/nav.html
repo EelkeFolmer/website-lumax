@@ -3,7 +3,15 @@
   <a class="nav__logo" href="{{ $home | relURL }}" aria-label="Lumax — home">{{ partial "logo.html" . }}</a>
   <div class="nav__links">
     {{- range site.Menus.main }}
-    <a href="{{ if $.IsHome }}{{ .URL }}{{ else }}{{ printf "/%s" .URL | relURL }}{{ end }}"{{ if and (not $.IsHome) (eq .Identifier "projects") }} class="is-current"{{ end }}>{{ .Name }}</a>
+    {{- $u := .URL }}
+    {{- if hasPrefix $u "#" }}
+      {{- /* In-page anchor: jump within home, or back to home + anchor elsewhere. */ -}}
+      {{- if not $.IsHome }}{{ $u = printf "/%s" $u | relURL }}{{ end }}
+    {{- else }}
+      {{- $u = $u | relURL }}
+    {{- end }}
+    {{- $current := or (and (eq .Identifier "projects") (eq $.Section "stories")) (and (eq .Identifier "resources") (eq $.Section "resources")) }}
+    <a href="{{ $u }}"{{ if $current }} class="is-current"{{ end }}>{{ .Name }}</a>
     {{- end }}
   </div>
   <button class="nav__toggle" type="button" data-nav-toggle aria-label="Menu" aria-expanded="false">

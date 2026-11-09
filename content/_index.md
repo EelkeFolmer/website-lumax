@@ -40,16 +40,29 @@ services:
       text: "Geospatial and statistical work that turns a season of raw capture into something a manager can act on."
 
 resources:
-  title: "Everything we can publish, we publish."
+  title: "What we build, and what we publish."
+  description: "We build the platforms partners use to turn a season of field data into a verified count, publish the papers and reports behind the method, and write short brochures when a project needs a quick overview — with datasets and model cards released where licensing and sensitivity allow, and plain notes on where a model should not be trusted."
   items:
+    - name: "Platforms"
+      text: "The portals partners log into to take a project from field upload to a verified count."
+      url: "/resources/#platforms"
+      glyph: "platform"
     - name: "Papers"
       text: "Peer-reviewed method and ecology work, with the code where licensing allows."
+      url: "/resources/#paper"
+      glyph: "paper"
     - name: "Reports"
       text: "Season reports written for the agencies and partners who commissioned the survey."
+      url: "/resources/#report"
+      glyph: "report"
     - name: "Datasets"
       text: "Annotated imagery and footage, released where licensing and species sensitivity allow."
-    - name: "Models"
-      text: "Model cards stating what each detector was trained on, and where it should not be trusted."
+      url: "/resources/#dataset"
+      glyph: "dataset"
+    - name: "Brochures"
+      text: "Short two-page summaries, for a quick overview of a project."
+      url: "/resources/#brochure"
+      glyph: "brochure"
 
 contact:
   title: "Tell us what you are trying to understand."
