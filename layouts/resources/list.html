@@ -1,0 +1,99 @@
+{{ define "main" }}
+{{- $pubs := site.Data.publications | default slice -}}
+{{- $stories := (where site.RegularPages "Section" "stories").ByWeight -}}
+
+{{- /* Display order and headings for the publication types. Types with no
+       entries are skipped, so adding a dataset/software entry to the data file
+       makes its group appear here with no template change. */ -}}
+{{- $order := slice "paper" "report" "dataset" "software" "brochure" -}}
+{{- $labels := dict
+      "paper" "Papers"
+      "report" "Reports"
+      "dataset" "Datasets"
+      "software" "Models &amp; code"
+      "brochure" "Brochures" -}}
+
+<section class="rp">
+  {{- /* Night-only ambient glow, matching the story and home pages. */ -}}
+  <div class="glow glow--teal" style="width:520px;height:520px;right:-180px;top:-120px"></div>
+  <div class="glow glow--green" style="width:460px;height:460px;left:-160px;bottom:40px"></div>
+
+  <div class="rp__masthead">
+    <span class="eyebrow">resources</span>
+    <h1 class="section-title">{{ .Title }}</h1>
+    {{- with .Params.standfirst }}<p class="rp__standfirst">{{ . }}</p>{{ end }}
+  </div>
+
+  {{- /* Jump index — only the categories that actually have entries. */ -}}
+  <nav class="rp__index" aria-label="Resource categories">
+    <a href="#platforms">Platforms</a>
+    {{- range $type := $order }}
+      {{- with where $pubs "type" $type }}
+      <a href="#{{ $type }}">{{ index $labels $type | safeHTML }} <span>{{ len . }}</span></a>
+      {{- end }}
+    {{- end }}
+  </nav>
+
+  {{- /* Platforms — the project portals, pulled from each story's link/resource items. */ -}}
+  <section id="platforms" class="rp__group">
+    <div class="rp__group-head">
+      {{ partial "resource-glyph.html" "platform" }}
+      <h2 class="rp__group-title">Platforms</h2>
+    </div>
+    <div class="rp__list">
+      {{- range $story := $stories }}
+        {{- $name := $story.Params.shortTitle | default $story.Title }}
+        {{- /* A story's inline resource items carry the richer label; fall back
+               to the story's own `link` only when it has no such items, so a
+               platform is never listed twice. */ -}}
+        {{- $items := slice }}
+        {{- range $story.Params.blocks }}
+          {{- if eq .type "resources" }}{{ range .items }}{{ $items = $items | append . }}{{ end }}{{ end }}
+        {{- end }}
+        {{- if not $items }}{{ with $story.Params.link }}{{ $items = $items | append . }}{{ end }}{{ end }}
+        {{- range $items }}
+        <a class="rp__item" href="{{ .url }}" target="_blank" rel="noopener">
+          <span class="rp__year"></span>
+          <span class="rp__body">
+            <span class="rp__title">{{ .label }}</span>
+            <span class="rp__meta">Project platform</span>
+          </span>
+          <span class="rp__tags"><span class="rp__tag">{{ $name }}</span></span>
+        </a>
+        {{- end }}
+      {{- end }}
+    </div>
+  </section>
+
+  {{- range $type := $order }}
+    {{- $group := sort (where $pubs "type" $type) "year" "desc" }}
+    {{- with $group }}
+    <section id="{{ $type }}" class="rp__group">
+      <div class="rp__group-head">
+        {{ partial "resource-glyph.html" $type }}
+        <h2 class="rp__group-title">{{ index $labels $type | safeHTML }}</h2>
+        <span class="rp__group-count">{{ len $group }}</span>
+      </div>
+      <div class="rp__list">
+        {{- range . }}
+        <a class="rp__item" href="{{ .url }}"{{ if not (hasPrefix .url "/") }} target="_blank" rel="noopener"{{ end }}>
+          <span class="rp__year">{{ .year }}</span>
+          <span class="rp__body">
+            <span class="rp__title">{{ .title }}</span>
+            <span class="rp__meta">{{ .authors }} &middot; <em>{{ .venue }}</em>{{ with .language }} &middot; in {{ . }}{{ end }}</span>
+          </span>
+          <span class="rp__tags">
+            {{- range .projects }}
+              {{- with site.GetPage (printf "/stories/%s" .) }}<span class="rp__tag">{{ .Params.shortTitle | default .Title }}</span>{{ end }}
+            {{- end }}
+            {{- if .openAccess }}<span class="rp__tag rp__tag--oa">open access</span>{{ end }}
+          </span>
+        </a>
+        {{- end }}
+      </div>
+    </section>
+    {{- end }}
+  {{- end }}
+
+</section>
+{{ end }}

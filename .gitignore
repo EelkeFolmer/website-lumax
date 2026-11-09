@@ -9,7 +9,9 @@ node_modules
 builds
 package-lock.json
 public
-resources
+# Hugo's image-processing cache at the repo root only — must stay anchored,
+# or it also swallows content/resources/ and layouts/resources/.
+/resources/
 .hugo_build.lock
 jsconfig.json
 hugo_stats.json
