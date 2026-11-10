@@ -12,9 +12,9 @@ title = "Lumax"
 
 [menu]
   [[menu.main]]
-    identifier = "projects"
-    name = "projects"
-    url = "#projects"
+    identifier = "field-notes"
+    name = "field notes"
+    url = "#field-notes"
     weight = 1
   [[menu.main]]
     identifier = "about"
@@ -31,6 +31,13 @@ title = "Lumax"
     name = "resources"
     url = "/resources/"
     weight = 4
+
+# Section is "stories" internally; it is served as /field-notes/.
+[permalinks]
+  [permalinks.page]
+    stories = "/field-notes/:filename/"
+  [permalinks.section]
+    stories = "/field-notes/"
 
 [markup.goldmark.renderer]
   unsafe = true

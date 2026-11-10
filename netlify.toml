@@ -19,6 +19,11 @@
     X-XSS-Protection = "1; mode=block"
 
 [[redirects]]
+  from = "/stories/*"
+  to = "/field-notes/:splat"
+  status = 301
+
+[[redirects]]
   from = "/team"
   to = "/about"
   status = 301

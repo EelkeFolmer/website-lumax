@@ -10,7 +10,7 @@
     {{- else }}
       {{- $u = $u | relURL }}
     {{- end }}
-    {{- $current := or (and (eq .Identifier "projects") (eq $.Section "stories")) (and (eq .Identifier "resources") (eq $.Section "resources")) }}
+    {{- $current := or (and (eq .Identifier "field-notes") (eq $.Section "stories")) (and (eq .Identifier "resources") (eq $.Section "resources")) }}
     <a href="{{ $u }}"{{ if $current }} class="is-current"{{ end }}>{{ .Name }}</a>
     {{- end }}
   </div>

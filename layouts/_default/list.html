@@ -7,7 +7,7 @@
 <div class="projects">
   {{- range $i, $p := .Pages.ByWeight }}
   <a class="project-row" href="{{ .RelPermalink }}">
-    <div class="project-row__num">{{ printf "%02d" (add $i 1) }}</div>
+    <div class="project-row__num">no. {{ printf "%02d" (add $i 1) }}</div>
     <div class="project-row__title"><h3>{{ .Params.shortTitle | default .Title }}</h3></div>
     <p class="project-row__blurb">{{ .Params.blurb }}</p>
     <div class="project-row__partner">{{ .Params.partner }}</div>

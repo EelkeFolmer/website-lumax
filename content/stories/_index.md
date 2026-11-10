@@ -1,3 +1,3 @@
 ---
-title: "Project stories"
+title: "Field notes"
 ---

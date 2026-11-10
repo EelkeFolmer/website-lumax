@@ -16,8 +16,8 @@ hero:
       alt: "Thor Veen with survey gear on the Nitinat River"
 
 flock:
-  title: "Four stories, each on its own page."
-  note: "The flock settles into one project name at a time. Hover to hold it, click to open that story."
+  title: "Four projects, written up from the field."
+  note: "Hover to hold a name, click to open its field notes."
 
 about:
   title: "This is our team."

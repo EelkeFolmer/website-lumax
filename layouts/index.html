@@ -46,10 +46,10 @@
 </section>
 
 {{- $flock := .Params.flock }}
-<div id="projects" class="flock">
+<div id="field-notes" class="flock">
   <div class="grid flock__head">
     <div class="col-lead">
-      <span class="eyebrow">projects</span>
+      <span class="eyebrow">field notes</span>
       <h2 class="section-title">{{ $flock.title }}</h2>
     </div>
     <div class="col-note">
@@ -73,36 +73,13 @@
 <div class="projects">
   {{- range $i, $p := $stories }}
   <a class="project-row" href="{{ .RelPermalink }}">
-    <div class="project-row__num">{{ printf "%02d" (add $i 1) }}</div>
+    <div class="project-row__num">no. {{ printf "%02d" (add $i 1) }}</div>
     <div class="project-row__title"><h3>{{ .Params.shortTitle | default .Title }}</h3></div>
     <p class="project-row__blurb">{{ .Params.blurb }}</p>
     <div class="project-row__partner">{{ .Params.partner }}</div>
   </a>
   {{- end }}
 </div>
-
-{{- with $stories }}{{ $teaser := index . 0 }}
-<div class="teaser-wrap">
-  <a class="teaser" href="{{ $teaser.RelPermalink }}">
-    <div class="teaser__head">
-      <span class="teaser__kicker">field notes &mdash; no. 01</span>
-      <h3>{{ $teaser.Params.shortTitle | default $teaser.Title }}</h3>
-    </div>
-    {{- /* Opening paragraphs of the story's first prose section. */ -}}
-    {{- $lede := slice }}
-    {{- range $teaser.Params.blocks }}
-      {{- if and (eq .type "section") (not $lede) }}{{ $lede = first 2 .body }}{{ end }}
-    {{- end }}
-    <div class="teaser__body">
-      {{- range $lede }}<p>{{ . }}</p>{{ end }}
-    </div>
-    <div class="teaser__aside">
-      <p>The project stories are set as field notes &mdash; serif text, recycled paper, captions in the margin.</p>
-      <span class="link-underline">read the story &rarr;</span>
-    </div>
-  </a>
-</div>
-{{- end }}
 
 {{- $about := .Params.about }}
 <div id="about" class="about">

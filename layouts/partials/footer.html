@@ -1,9 +1,8 @@
-{{- $first := index (where site.RegularPages "Section" "stories").ByWeight 0 -}}
 <div class="footer">
   <span>&copy; {{ now.Year }} Lumax</span>
   <div class="footer__links">
     <a href="mailto:{{ site.Params.contact.email }}">get in touch</a>
-    {{ with $first }}<a href="{{ .RelPermalink }}">project stories</a>{{ end }}
+    {{ with site.GetPage "/stories" }}<a href="{{ .RelPermalink }}">field notes</a>{{ end }}
     <button class="theme-toggle" type="button" data-theme-toggle>night theme</button>
     <a href="{{ "imprint/" | relURL }}">imprint</a>
   </div>
