@@ -32,12 +32,15 @@
   --gutter: 44px;
   --grid-gap: 26px;
 
-  /* ---- Day (default) ---- */
-  --ground: #ffffff;
-  --ground-story: #e7e4da;
-  --ground-nav: rgba(255, 255, 255, 0.94);
-  --surface: #f5f4f0;
-  --surface-2: #e7e4da;
+  /* ---- Day (default) ----
+     The whole site now sits on the warm field-notes paper (--ground); the
+     story pages lift to a cleaner, brighter page (--ground-story) so the
+     field notes stand out while staying in the same paper family. */
+  --ground: #e7e4da;
+  --ground-story: #f6f3ec;
+  --ground-nav: rgba(231, 228, 218, 0.9);
+  --surface: #efebe1;
+  --surface-2: #dcd7c9;
 
   --ink: #14140f;
   --ink-hover: #4a483f;
@@ -47,7 +50,11 @@
   --ink-faint: #8a887d;
   --on-image: #ffffff;
 
-  --line: #e2e0d9;
+  /* Muted "field-notes" gold — a quiet National Geographic nod, used on the
+     story section kickers. */
+  --story-accent: #a9822b;
+
+  --line: #d9d4c6;
   --line-2: #cfcabb;
   --line-3: #d5d2c9;
 
@@ -75,6 +82,8 @@
   --ink-muted: rgba(234, 239, 233, 0.62);
   --ink-faint: rgba(234, 239, 233, 0.5);
   --on-image: #ffffff;
+
+  --story-accent: #d4a84e;
 
   --line: rgba(234, 239, 233, 0.16);
   --line-2: rgba(234, 239, 233, 0.16);

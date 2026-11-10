@@ -9,8 +9,8 @@ hero:
       text: "Founded on principles of scientific rigor and lasting partnerships, we transform complex environmental data into actionable insights."
       byline: "Thor Veen & Eelke Folmer"
     - kind: photo
-      photo: "/images/photos/the-nitinat-river-from-the-air.jpg"
-      alt: "The Nitinat River from the air"
+      photo: "/images/photos/wierum-pole-rows-on-the-flat-at-dusk.jpg"
+      alt: "Rows of wooden poles on the Wierum mudflat at dusk"
     - kind: photo
       photo: "/images/photos/thor-veen-with-survey-gear-on-the-nitinat-river.jpg"
       alt: "Thor Veen with survey gear on the Nitinat River"

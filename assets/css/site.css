@@ -766,7 +766,7 @@ img { max-width: 100%; }
   display: flex;
   justify-content: space-between;
   padding: 9px var(--gutter);
-  border-bottom: 1px solid var(--line-2);
+  border-bottom: 1px solid var(--story-accent);
   font-family: var(--font-body);
   font-size: 9px;
   letter-spacing: 0.08em;
@@ -913,7 +913,7 @@ img[data-full] { cursor: zoom-in; }
   font-family: var(--font-body);
   font-size: 9.5px;
   letter-spacing: 0.14em;
-  color: var(--ink-faint);
+  color: var(--story-accent);
 }
 .story__section-head h2 {
   font-family: var(--font-display);
