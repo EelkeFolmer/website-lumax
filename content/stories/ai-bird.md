@@ -8,8 +8,8 @@ status: "Ongoing"
 link:
   label: "ai-bird.org"
   url: "https://ai-bird.org"
-blurb: "Seabirds breed in dense colonies on islands, sandbanks and salt marshes, where a count on foot disturbs the birds it counts. Drone surveys count every breeding bird across a whole colony, and can find dead birds when avian influenza comes through."
-standfirst: "Many seabirds breed in a few dense colonies, at a time when they are most sensitive to disturbance and predation. We count those colonies from the air, so that nobody has to walk into them."
+blurb: "Seabirds breed in dense colonies on islands, sandbanks and salt marshes. We map colonies using drones, and our online platform stitches the photos into a map, counts every bird and places the detections on the map. The same surveys show where birds have died when avian influenza hits. We do this because better monitoring leads to better protection of these colonies."
+standfirst: "Many seabirds breed in a few dense colonies on islands, sandbanks and salt marshes, at a time when they are most sensitive to disturbance and predation. The breeding season is also the only time a breeding census can be done, and counting a colony on foot means walking through the nesting ground. We count those colonies from the air instead. A drone flies over the colony in parallel lines, and its photos are stitched into one map of the whole colony. Models trained on earlier surveys find every bird and nest on that map and give each bird a species. The drone pilot uploads the photos to an online platform, and soon after the flight the counts appear on a map, where the site manager can check the detections and correct them where needed. The same survey shows where birds have died when avian influenza comes through a colony."
 blocks:
   - type: "figure"
     alt: "A breeding colony photographed from survey altitude"

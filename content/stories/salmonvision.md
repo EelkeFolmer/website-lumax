@@ -12,7 +12,7 @@ collaborators:
 link:
   label: "salmonvision.org"
   url: "https://salmonvision.org"
-blurb: "Tens of millions of salmon return each year to the rivers of the Pacific Northwest, and many of those rivers are remote and not monitored. Salmon Vision turns video from weirs into counts by species while the run is still going, with experts checking the results."
+blurb: "Tens of millions of salmon return each year to the rivers of the Pacific Northwest, and managers need to know during the run how many are coming up. Salmon Vision counts them by species from weir video while the run is still going."
 standfirst: "Tens of millions of salmon return each year to the rivers of the Pacific Northwest, and many of those rivers are remote and not monitored. Salmon Vision turns video from weirs into counts by species while the run is still going, with experts checking the results."
 blocks:
   - type: "figure"
