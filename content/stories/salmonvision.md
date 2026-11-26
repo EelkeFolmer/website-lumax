@@ -28,6 +28,9 @@ blocks:
       - "Many people depend on these salmon. First Nations and tribes rely on salmon as a daily food source and for cultural practices. Commercial and sport fisheries, and the communities around them, rely on them too. People have long counted salmon to manage the harvest. A traditional cedar weir let a community count the fish, let enough pass upstream to spawn, and respectfully take what was needed. Today people snorkel rivers, walk the banks, fly aerial surveys, mark and recapture fish, and build weirs and install cameras and sonar to find out how many fish there are."
       - "Still, runs are often badly misjudged. In 2026, Fraser River sockeye were expected to have one of their big years, the dominant year in their four-year cycle. Instead, the pre-season forecast of 7.7 million fish was off by 61% during the season and only 3.2 million fish were estimated to have gone upriver. Managers need to know during the season, not after it, what is coming up the river, so they can decide how much can be harvested and how much must be left to spawn. That is hard to do. Fish keep arriving, so which one is new and which have already been counted? Species can be hard to separate and overlapping run times complicate counting. And the number of fish is only part of the story: how many actually spawn, whether a flash flood washes the spawning grounds away, and how many young fish, the smolts, make it down to the sea all matter as well."
       - "What is needed are systems that give reliable counts in near real time, that do not need people on the bank around the clock, and cost little enough to run on many rivers. Salmon Vision is built to meet all three."
+    marginPull: "Managers need to know during the season, not after it, what is coming up the river."
+  - type: "quote"
+    text: "From the bank you see movement but rarely individual fish."
   - type: "figure-pair"
     items:
       - alt: "A black bear standing on mossy rocks at the edge of a river, reflected in the water"
@@ -49,6 +52,7 @@ blocks:
       - "On a single river, with enough data, this works very well. But our aim is bigger: a tool that works across many river systems. A model that has only seen one river does not recognise fish that look different, or fish at another stage of their life cycle, so it has to be retrained. We have now done this at 19 locations, and the result is a robust system."
       - "People stay in the loop. This is not an automated system that we let run and simply trust. Experts who know the fish well review a subset of the footage and check the results. From those reviews we estimate the errors and biases of the model and correct the counts. The model can process footage overnight or in near real time, and with expert review the counts are ready within a few days. That is fast enough to guide decisions during the season."
       - "The video system is ready for production. Sonar is in development: we use data from more than 15 sonar sites to build and improve the algorithm."
+    marginPull: "With expert review the counts are ready within a few days."
   - type: "figure-pair"
     items:
       - alt: "A fence weir across a clear forest stream, with a person standing in the water beside it"
@@ -71,6 +75,9 @@ blocks:
       - "Salmon Vision started around 2020 with a single video box and has since counted millions of salmon. It tells the Pacific salmon species and other species such as steelhead apart. How closely the counts match those made by people varies from system to system, but overall accuracy is high and improving."
       - "The system also has limits. Outages mean missed counts. On a new river the fish may look different enough to confuse the model, which may then report a species that does not occur there. A new round of model training and a species list for each location reduce this. The expert review described above is how we catch these errors and measure them."
       - "A good outcome looks like this: harvest quotas are set using the current run size, not a forecast that may be badly off. The more accurate data also help to monitor and protect salmon, and they feed into the larger models that predict the runs to come."
+    marginPull: "Harvest quotas are set using the current run size, not a forecast that may be badly off."
+  - type: "quote"
+    text: "This is not an automated system that we let run and simply trust."
   - type: "figure"
     alt: "Two bears walking a gravel bar beside a clear river, from the air"
     photo: "/images/photos/bears-on-a-gravel-bar-from-the-air.jpg"
