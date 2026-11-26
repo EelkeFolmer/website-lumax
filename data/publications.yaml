@@ -60,6 +60,15 @@
   language: "Dutch"
   projects: [codap]
 
+- type: paper
+  title: "Wild salmon enumeration and monitoring using deep learning empowered detection and tracking"
+  authors: "Atlas, W.I., Ma, S., Chou, Y.C., Connors, K., Scurfield, D., Nam, B., Ma, X., Cleveland, M., Doire, J., Moore, J.W., Shea, R. & Liu, J."
+  year: 2023
+  venue: "Frontiers in Marine Science 10: 1200408"
+  url: "https://doi.org/10.3389/fmars.2023.1200408"
+  openAccess: true
+  projects: [salmonvision]
+
 - type: brochure
   title: "AI-BIRD: Automated Intelligence for Bird Inventory and Reproduction using Drones"
   authors: "Lumax & Sovon"
