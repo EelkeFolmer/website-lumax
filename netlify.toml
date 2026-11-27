@@ -1,13 +1,111 @@
 [build]
-publish = "public"
-command = "yarn project-setup; yarn build"
+  command = "hugo --minify"
+  publish = "public"
 
 [build.environment]
-HUGO_VERSION = "0.134.3"
-GO_VERSION = "1.23.0"
+  HUGO_VERSION = "0.139.4"
 
-# [context.production.environment]
-# HUGO_BASEURL = "https://lumax.ai"
+# Previews get noindex instead of a canonical link to lumax.ai
+[context.deploy-preview]
+  command = "hugo -e preview --minify"
 
-[context.deploy-preview.environment]
-HUGO_BASEURL = "/"
+[context.branch-deploy]
+  command = "hugo -e preview --minify"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+
+[[redirects]]
+  from = "/stories/*"
+  to = "/field-notes/:splat"
+  status = 301
+
+# Pages of the previous site (lumax.ai before the redesign)
+[[redirects]]
+  from = "/themes/aibird"
+  to = "/field-notes/ai-bird/"
+  status = 301
+
+[[redirects]]
+  from = "/themes/salmonvision"
+  to = "/field-notes/salmonvision/"
+  status = 301
+
+[[redirects]]
+  from = "/themes/aerialsalmon"
+  to = "/field-notes/salmonvision/"
+  status = 301
+
+[[redirects]]
+  from = "/themes/dronecoast"
+  to = "/field-notes/codap/"
+  status = 301
+
+[[redirects]]
+  from = "/themes/trout-reid"
+  to = "/field-notes/reid/"
+  status = 301
+
+[[redirects]]
+  from = "/themes/privacy-policy"
+  to = "/legal/"
+  status = 301
+
+[[redirects]]
+  from = "/imprint"
+  to = "/legal/"
+  status = 301
+
+[[redirects]]
+  from = "/themes/*"
+  to = "/#field-notes"
+  status = 301
+
+[[redirects]]
+  from = "/about/*"
+  to = "/#about"
+  status = 301
+
+[[redirects]]
+  from = "/team/*"
+  to = "/#about"
+  status = 301
+
+[[redirects]]
+  from = "/services/*"
+  to = "/#services"
+  status = 301
+
+# Template leftovers of the previous site
+[[redirects]]
+  from = "/contact/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/blog/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/authors/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/categories/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/tags/*"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/sections/*"
+  to = "/"
+  status = 301

@@ -1,0 +1,19 @@
+{{- /*
+  Circular team avatar. `--radius-full` is reserved for pills, status dots and
+  avatars, so a round mark is the sanctioned treatment here.
+
+  Falls back to an initials mark when a person has no photograph yet, which is
+  what the design system specifies for that case.
+
+  Call: {{ partial "avatar.html" . }}  (a data/team.yaml entry)
+*/ -}}
+{{- $img := "" -}}
+{{- with .photo }}{{ $img = resources.Get (printf "images/team/%s" .) }}{{ end -}}
+{{- if $img -}}
+  {{- $a := $img.Fill "96x96 Center q82" -}}
+  <img class="avatar" src="{{ $a.RelPermalink }}" width="48" height="48" alt="{{ .name }}" loading="lazy">
+{{- else -}}
+  {{- $initials := "" -}}
+  {{- range (split .name " ") }}{{ $initials = printf "%s%s" $initials (substr . 0 1) }}{{ end -}}
+  <span class="avatar avatar--initials" role="img" aria-label="{{ .name }} — no photograph yet">{{ $initials }}</span>
+{{- end -}}

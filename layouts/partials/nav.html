@@ -1,0 +1,20 @@
+{{- $home := "/" -}}
+<nav class="nav" data-nav>
+  <a class="nav__logo" href="{{ $home | relURL }}" aria-label="Lumax — home">{{ partial "logo.html" . }}</a>
+  <div class="nav__links">
+    {{- range site.Menus.main }}
+    {{- $u := .URL }}
+    {{- if hasPrefix $u "#" }}
+      {{- /* In-page anchor: jump within home, or back to home + anchor elsewhere. */ -}}
+      {{- if not $.IsHome }}{{ $u = printf "/%s" $u | relURL }}{{ end }}
+    {{- else }}
+      {{- $u = $u | relURL }}
+    {{- end }}
+    {{- $current := or (and (eq .Identifier "field-notes") (eq $.Section "stories")) (and (eq .Identifier "resources") (eq $.Section "resources")) }}
+    <a href="{{ $u }}"{{ if $current }} class="is-current"{{ end }}>{{ .Name }}</a>
+    {{- end }}
+  </div>
+  <button class="nav__toggle" type="button" data-nav-toggle aria-label="Menu" aria-expanded="false">
+    <span></span><span></span>
+  </button>
+</nav>
