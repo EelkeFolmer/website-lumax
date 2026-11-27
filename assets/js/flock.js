@@ -131,6 +131,33 @@
       }, 150);
     }
 
+    /* Ambient mode is a metapopulation: patches of unequal size, each ant
+       tied to a home patch, and now and then one disperses along an edge to
+       a neighbouring patch. Coordinates are fractions of the enclosure. */
+    var patches = [];
+    if (ambient) {
+      var erx = W / 2 - P.margin, ery = H / 2 - P.inset;
+      var base = 0.1 * Math.min(W, H);
+      patches = [
+        { u: -0.55, v: -0.35, w: 3,   nb: [1, 2, 4, 5] },
+        { u: 0.15,  v: -0.62, w: 1.5, nb: [0, 2, 5] },
+        { u: 0.58,  v: -0.02, w: 2.5, nb: [0, 1, 3, 5] },
+        { u: 0.18,  v: 0.58,  w: 1.5, nb: [2, 4, 5] },
+        { u: -0.45, v: 0.45,  w: 2,   nb: [0, 3, 5] },
+        /* Centre: a stepping stone linked to every other patch. */
+        { u: 0,     v: 0,     w: 1.5, nb: [0, 1, 2, 3, 4] }
+      ].map(function (q) {
+        return { x: W / 2 + q.u * erx, y: H / 2 + q.v * ery, r: base * Math.sqrt(q.w), w: q.w, nb: q.nb };
+      });
+      var wsum = 0;
+      patches.forEach(function (q) { wsum += q.w; });
+    }
+    function pickPatch() {
+      var r = Math.random() * wsum;
+      for (var k = 0; k < patches.length; k++) { r -= patches[k].w; if (r <= 0) return k; }
+      return patches.length - 1;
+    }
+
     var N = P.density;
     var pts = [];
     for (var i = 0; i < N; i++) {
@@ -143,8 +170,13 @@
         a: Math.random() * 6.28, sp: (0.8 + Math.random() * 0.5) * P.speed,
         d: Math.random(), ti: (Math.random() * 100000) | 0,
         ox: (Math.random() - 0.5) * 2.4, oy: (Math.random() - 0.5) * 2.4,
-        cool: 0
+        cool: 0, h: 0
       });
+      if (ambient) {
+        var hp0 = patches[pts[i].h = pickPatch()];
+        pts[i].x = hp0.x + g1 * hp0.r * 0.5;
+        pts[i].y = hp0.y + g2 * hp0.r * 0.5;
+      }
     }
 
     var CS = W < 520 ? 7 : 14, GW = Math.ceil(W / CS), GH = Math.ceil(H / CS);
@@ -181,7 +213,8 @@
       if (--vcheck <= 0) {
         vcheck = 20;
         var r = canvas.getBoundingClientRect();
-        onScreen = r.bottom > -200 && r.top < (window.innerHeight || 800) + 200;
+        /* A display:none canvas has a zero rect, so check width as well. */
+        onScreen = r.width > 0 && r.bottom > -200 && r.top < (window.innerHeight || 800) + 200;
       }
       if (!onScreen) { state.raf = requestAnimationFrame(step); return; }
 
@@ -277,11 +310,22 @@
           p.a += (Math.random() - 0.5) * P.wander * fdt;
           if (Math.random() < 0.006) p.a += (Math.random() - 0.5) * 2.2;
 
-          /* Gravity toward the middle: negligible at the centre, sharper further out. */
-          var gnx = (p.x - cx) / rx, gny = (p.y - cy) / ry;
+          /* Gravity toward the middle (or, ambient, the home patch):
+             negligible at the centre, sharper further out. */
+          var hx = cx, hy = cy, hrx = rx, hry = ry;
+          if (ambient) {
+            /* About one ant in 2500 per tick leaves for a neighbouring patch. */
+            if (Math.random() < 0.0004 * fdt) {
+              var nb = patches[p.h].nb;
+              p.h = nb[(Math.random() * nb.length) | 0];
+            }
+            var hp = patches[p.h];
+            hx = hp.x; hy = hp.y; hrx = hry = hp.r;
+          }
+          var gnx = (p.x - hx) / hrx, gny = (p.y - hy) / hry;
           var rr = Math.sqrt(gnx * gnx + gny * gny);
           if (rr > 0.02) {
-            var ca = Math.atan2(cy - p.y, cx - p.x);
+            var ca = Math.atan2(hy - p.y, hx - p.x);
             var d2 = ca - p.a;
             while (d2 > Math.PI) d2 -= 6.283;
             while (d2 < -Math.PI) d2 += 6.283;

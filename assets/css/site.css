@@ -265,7 +265,6 @@ a.hero__cell:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px
   width: 100%;
   font-family: var(--font-display);
 }
-.collective-swarm { padding: 24px var(--gutter) 0; position: relative; z-index: 1; }
 
 /* ---- Project index rows -------------------------------------------------- */
 
@@ -355,6 +354,7 @@ a.hero__cell:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px
   z-index: 1;
 }
 .about__head { grid-column: 1 / 5; }
+.about__swarm { margin-top: 48px; width: 300px; max-width: 100%; } /* square, flush left */
 .about__body { grid-column: 5 / 11; padding-top: 76px; }
 .about__body p {
   font-family: var(--font-body);
@@ -1262,6 +1262,7 @@ img[data-full] { cursor: zoom-in; }
   .about { padding: 56px var(--gutter) 32px; }
   .about__body { padding-top: 22px; }
   .about__margin { display: none; } /* repeats the text just above it */
+  .about__swarm { display: none; } /* no empty column to fill on a phone */
   .resources__head .col-body { padding-top: 20px; }
   .team { padding: 0 var(--gutter) 56px; }
   .team__list { display: grid; grid-template-columns: 1fr; row-gap: 24px; }

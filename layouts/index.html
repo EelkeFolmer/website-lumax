@@ -49,6 +49,8 @@
   <div class="about__head">
     <span class="eyebrow">about</span>
     <h2 class="section-title">{{ $about.title }}</h2>
+    {{- /* The swarm, drifting without forming words: a picture of the collective. */}}
+    <canvas class="flock__canvas about__swarm" data-flock data-ambient data-height="300" aria-hidden="true"></canvas>
   </div>
   <div class="about__body">
     {{- range $about.paragraphs }}<p>{{ . }}</p>{{ end }}
@@ -56,11 +58,6 @@
   {{- with $about.pull }}
   <aside class="about__margin"><p class="pull">{{ . }}</p></aside>
   {{- end }}
-</div>
-
-{{- /* The swarm, drifting without forming words: a picture of the collective. */}}
-<div class="collective-swarm">
-  <canvas class="flock__canvas" data-flock data-ambient data-height="180" aria-hidden="true"></canvas>
 </div>
 
 <div class="team">
