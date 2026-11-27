@@ -39,7 +39,13 @@
     <div class="project-row__num">no. {{ printf "%02d" (add $i 1) }}</div>
     <div class="project-row__title"><h3>{{ .Params.shortTitle | default .Title }}</h3></div>
     <p class="project-row__blurb">{{ .Params.blurb }}</p>
-    <div class="project-row__partner">{{ .Params.partner }}</div>
+    {{- /* A small picture from the story: `thumb` if set, else the first figure. */ -}}
+    {{- $src := .Params.thumb -}}
+    {{- if not $src }}{{ range .Params.blocks }}{{ if and (not $src) (eq .type "figure") }}{{ $src = .photo }}{{ end }}{{ end }}{{ end -}}
+    {{- with $src }}{{ with resources.Get (strings.TrimPrefix "/" .) }}
+    {{- $t := .Fill "320x200 Center webp q78" }}
+    <div class="project-row__thumb"><img src="{{ $t.RelPermalink }}" width="160" height="100" alt="" loading="lazy" decoding="async"></div>
+    {{- end }}{{ end }}
   </a>
   {{- end }}
 </div>

@@ -318,6 +318,26 @@ a.hero__cell:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px
   letter-spacing: 0.04em;
   color: var(--ink-muted);
 }
+.project-row__thumb {
+  grid-column: 11 / 13;
+  justify-self: end;
+  width: 100%;
+  max-width: 160px;
+  aspect-ratio: 8 / 5;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--line);
+}
+.project-row__thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.85);
+  transition: filter 300ms ease, transform 600ms ease;
+}
+.project-row:hover .project-row__thumb img,
+.project-row:focus-visible .project-row__thumb img { filter: none; transform: scale(1.04); }
 
 .link-underline {
   font-family: var(--font-body);
@@ -1268,6 +1288,7 @@ img[data-full] { cursor: zoom-in; }
   .project-row__num { margin-bottom: 6px; }
   .project-row__blurb { margin: 8px 0 0; }
   .project-row__partner { text-align: left; margin-top: 8px; }
+  .project-row__thumb { max-width: none; margin-top: 14px; }
   .projects { padding-bottom: 56px; }
   .project-row__num { padding-top: 0; }
 

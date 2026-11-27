@@ -5,6 +5,7 @@ subtitle: "Re-identifying individual westslope cutthroat trout from photographs"
 weight: 4
 partner: "for Elk Valley Resources"
 status: "Ongoing"
+thumb: "/images/photos/westslope-cutthroat-trout-keypoint-matches-thumb.jpg"
 blurb: "Every westslope cutthroat trout carries its own pattern of black spots. We recognise individual trout from field photographs, so that a recaptured fish can be found without a tag."
 standfirst: "Westslope cutthroat trout carry a pattern of black spots on their flanks that differs from fish to fish. A photograph taken when a fish is caught can therefore serve as its tag. We built a pipeline that takes such field photographs, straightens and cuts out the fish, and compares its spot pattern with every fish already in the database. For the Elk River in British Columbia, the true recapture was the top match in 98% of the 2023 photographs. A person checks the best matches before they enter the record."
 blocks:
