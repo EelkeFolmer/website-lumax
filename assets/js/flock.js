@@ -13,7 +13,9 @@
   var captionEl = document.querySelector('[data-flock-caption]');
   var words = JSON.parse(canvas.getAttribute('data-words') || '[]');
   var urls = JSON.parse(canvas.getAttribute('data-links') || '[]');
-  if (!words.length) return;
+  /* Ambient: the ants only drift, never forming a word or taking a click. */
+  var ambient = canvas.hasAttribute('data-ambient');
+  if (!words.length && !ambient) return;
 
   var DENSITY = 2600;
   var HOLD_S = 4;
@@ -51,7 +53,7 @@
       (canvas.parentElement && canvas.parentElement.clientWidth) || 0
     );
     var W = Math.max(240, measured || 960);
-    var H = 340;
+    var H = parseInt(canvas.getAttribute('data-height'), 10) || 340;
     state.lastW = W;
 
     var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
@@ -185,7 +187,8 @@
 
       var dt = t - state.t0;
       var prev = state.phase;
-      if (prev === 'free' && dt > freeMs) setPhase('form');
+      if (ambient) { /* stay free */ }
+      else if (prev === 'free' && dt > freeMs) setPhase('form');
       else if (prev === 'form' && dt > formMs) setPhase('hold');
       else if (prev === 'hold' && dt > P.hold * 1000 && !state.hover) setPhase('dissolve');
       else if (prev === 'dissolve' && dt > dissolveMs) {

@@ -30,22 +30,7 @@
       <span class="eyebrow">field notes</span>
       <h2 class="section-title">{{ $flock.title }}</h2>
     </div>
-    <div class="col-note">
-      <p class="flock__note">{{ $flock.note }}</p>
-    </div>
   </div>
-  {{- $words := slice }}{{ $urls := slice }}
-  {{- range $stories }}
-    {{- $words = $words | append (.Params.shortTitle | default .Title) }}
-    {{- $urls = $urls | append .RelPermalink }}
-  {{- end }}
-  <canvas class="flock__canvas" data-flock
-          {{- /* Not "data-urls": Go's autoescaper percent-encodes any attribute
-                 whose name contains "url", which would break JSON.parse. */}}
-          data-words='{{ $words | jsonify }}'
-          data-links='{{ $urls | jsonify }}'
-          aria-hidden="true"></canvas>
-  <div class="flock__caption"><span data-flock-caption></span></div>
 </div>
 
 <div class="projects">
@@ -68,6 +53,14 @@
   <div class="about__body">
     {{- range $about.paragraphs }}<p>{{ . }}</p>{{ end }}
   </div>
+  {{- with $about.pull }}
+  <aside class="about__margin"><p class="pull">{{ . }}</p></aside>
+  {{- end }}
+</div>
+
+{{- /* The swarm, drifting without forming words: a picture of the collective. */}}
+<div class="collective-swarm">
+  <canvas class="flock__canvas" data-flock data-ambient data-height="180" aria-hidden="true"></canvas>
 </div>
 
 <div class="team">
@@ -111,8 +104,10 @@
     <div class="col-lead">
       <span class="eyebrow">resources</span>
       <h2 class="section-title">{{ $resources.title }}</h2>
-      {{- with $resources.description }}<p class="resources__desc">{{ . }}</p>{{ end }}
     </div>
+    {{- with $resources.description }}
+    <div class="col-body"><p class="resources__desc">{{ . }}</p></div>
+    {{- end }}
   </div>
   <div class="resource-grid">
     {{- range $resources.items }}
@@ -138,7 +133,10 @@
 {{- $attrs := printf "class=%q" (delimit $class " ") -}}
 {{- if .dup }}{{ $attrs = printf "%s aria-hidden=\"true\"" $attrs }}{{ end -}}
 {{- if $cell.link }}
-<a {{ $attrs | safeHTMLAttr }} href="{{ $cell.link | relURL }}"{{ if .dup }} tabindex="-1"{{ end }}>
+{{- /* `link` is a content path ("/stories/ai-bird") or a plain URL. */ -}}
+{{- $href := $cell.link | relURL -}}
+{{- with site.GetPage $cell.link }}{{ $href = .RelPermalink }}{{ end }}
+<a {{ $attrs | safeHTMLAttr }} href="{{ $href }}"{{ if .dup }} tabindex="-1"{{ end }}>
 {{- else }}
 <div {{ $attrs | safeHTMLAttr }}>
 {{- end }}

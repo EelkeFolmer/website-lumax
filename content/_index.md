@@ -5,7 +5,7 @@ hero:
     - kind: photo
       photo: "/images/photos/ile-aux-oiseaux.jpg"
       alt: "A seabird colony on Île aux Oiseaux, from the air"
-      link: "/stories/ai-bird/"
+      link: "/stories/ai-bird"
       title: "Counting seabird colonies from the air"
       line: "Drone surveys and models that count every bird and nest in a breeding colony."
     - kind: statement
@@ -14,25 +14,25 @@ hero:
     - kind: photo
       photo: "/images/photos/wierum-pole-rows-on-the-flat-at-dusk.jpg"
       alt: "Rows of wooden poles on the Wierum mudflat at dusk"
-      link: "/stories/codap/"
+      link: "/stories/codap"
       title: "Measuring a moving coast"
       line: "Repeated drone surveys show where the Wadden Sea marshes build up and where they are lost."
     - kind: photo
       photo: "/images/photos/thor-veen-with-survey-gear-on-the-nitinat-river.jpg"
       alt: "Thor Veen with survey gear on the Nitinat River"
-      link: "/stories/salmonvision/"
+      link: "/stories/salmonvision"
       title: "Counting salmon during the run"
       line: "Weir video and models that count returning salmon by species while the run is on."
 
 flock:
   title: "Four projects, written up from the field."
-  note: "Hover to hold a name, click to open its field notes."
 
 about:
-  title: "This is our team."
+  title: "This is our collective."
+  pull: "A beehive is a better picture of how our collective runs than a hierarchy is."
   paragraphs:
     - "Lumax is a group of ecologists, machine-learning people, computer scientists and pilots, working alongside the universities, research institutes, NGOs, businesses and government agencies that commission the work. We operate across Europe and North America."
-    - "We don't draw a line between founders, advisors and partners, because the work doesn't. Roles shift with the season, the river and the question being asked, and whoever knows a system best leads that part of it. A beehive is a better picture of how this runs than a hierarchy is."
+    - "We don't draw a line between founders, contractors, advisors and partners, because the work doesn't. Roles shift with the season, the river and the question being asked, and whoever knows a system best leads that part of it. A beehive is a better picture of how our collective runs than a hierarchy is."
     - "What holds it together is a shared conviction that ecological decisions should rest on measurements somebody can check. That means being honest about uncertainty, publishing method alongside result, and saying plainly where a model should not be trusted."
     - "Founded on principles of scientific rigor and lasting partnerships, we transform complex environmental data into actionable insight — whether that means tracking wildlife populations, assessing habitat health, or measuring snow depth."
 
