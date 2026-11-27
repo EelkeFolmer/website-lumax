@@ -4,6 +4,7 @@
 
 [build.environment]
   HUGO_VERSION = "0.139.4"
+  NODE_VERSION = "24"
 
 # Previews get noindex instead of a canonical link to lumax.ai
 [context.deploy-preview]
