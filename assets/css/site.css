@@ -296,24 +296,11 @@ a.hero__cell:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px
   line-height: 1.14;
   margin: 0;
 }
-/* Hover: underline the name and slide in an arrow, so the row reads as a link. */
-.project-row__title h3::after {
-  content: "\2192";
-  display: inline-block;
-  margin-left: 10px;
-  opacity: 0;
-  transform: translateX(-6px);
-  transition: opacity 200ms ease, transform 200ms ease;
-}
-.project-row:hover { color: var(--ink); }
-.project-row:hover h3 {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 5px;
-}
-.project-row:hover h3::after,
-.project-row:focus-visible h3::after { opacity: 1; transform: none; }
-.project-row:hover .project-row__blurb { color: var(--ink); }
+/* Hover: the name takes the accent colour of the row number, so the row
+   reads as a link without extra marks. */
+.project-row h3 { transition: color 200ms ease; }
+.project-row:hover h3,
+.project-row:focus-visible h3 { color: var(--story-accent); }
 .project-row__blurb {
   grid-column: 5 / 11;
   font-family: var(--font-body);
