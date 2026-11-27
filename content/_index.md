@@ -31,7 +31,7 @@ about:
   title: "This is our collective."
   pull: "A beehive is a better picture of how our collective runs than a hierarchy is."
   paragraphs:
-    - "Lumax is a group of ecologists, machine-learning people, computer scientists and pilots, working alongside the universities, research institutes, NGOs, businesses and government agencies that commission the work. We operate across Europe and North America."
+    - "Lumax is a group of ecologists, machine-learning people, software engineers and pilots, working alongside the universities, research institutes, NGOs, businesses and government agencies that commission the work. We operate across Europe and North America."
     - "We don't draw a line between founders, contractors, advisors and partners, because the work doesn't. Roles shift with the season, the river and the question being asked, and whoever knows a system best leads that part of it. A beehive is a better picture of how our collective runs than a hierarchy is."
     - "What holds it together is a shared conviction that ecological decisions should rest on measurements somebody can check. That means being honest about uncertainty, publishing method alongside result, and saying plainly where a model should not be trusted."
     - "Founded on principles of scientific rigor and lasting partnerships, we transform complex environmental data into actionable insight — whether that means tracking wildlife populations, assessing habitat health, or measuring snow depth."
