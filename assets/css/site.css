@@ -89,8 +89,8 @@ img { max-width: 100%; }
 
 .nav__logo { display: flex; align-items: center; }
 .nav__logo svg { height: 24px; width: auto; display: block; overflow: visible; }
-.nav__logo svg g { fill: var(--ink); }
-.nav__logo svg text { fill: var(--ink); }
+.nav__logo svg g,
+.nav__logo svg text { fill: var(--brand-blue, #0087EF); }
 
 .nav__links {
   display: flex;
