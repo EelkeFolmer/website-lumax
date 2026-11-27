@@ -5,15 +5,24 @@ hero:
     - kind: photo
       photo: "/images/photos/ile-aux-oiseaux.jpg"
       alt: "A seabird colony on Île aux Oiseaux, from the air"
+      link: "/stories/ai-bird/"
+      title: "Counting seabird colonies from the air"
+      line: "Drone surveys and models that count every bird and nest in a breeding colony."
     - kind: statement
       text: "Founded on principles of scientific rigor and lasting partnerships, we transform complex environmental data into actionable insights."
       byline: "Thor Veen & Eelke Folmer"
     - kind: photo
       photo: "/images/photos/wierum-pole-rows-on-the-flat-at-dusk.jpg"
       alt: "Rows of wooden poles on the Wierum mudflat at dusk"
+      link: "/stories/codap/"
+      title: "Measuring a moving coast"
+      line: "Repeated drone surveys show where the Wadden Sea marshes build up and where they are lost."
     - kind: photo
       photo: "/images/photos/thor-veen-with-survey-gear-on-the-nitinat-river.jpg"
       alt: "Thor Veen with survey gear on the Nitinat River"
+      link: "/stories/salmonvision/"
+      title: "Counting salmon during the run"
+      line: "Weir video and models that count returning salmon by species while the run is on."
 
 flock:
   title: "Four projects, written up from the field."

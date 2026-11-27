@@ -199,6 +199,62 @@ img { max-width: 100%; }
 
 .hero__dots { display: none; }
 
+/* Linked quadrants: an overlay with title and "read more" sits at the foot of
+   the photo. On devices that can hover it stays hidden until hover or focus;
+   on touch screens it always shows, since there is no hover to reveal it. */
+a.hero__cell { color: var(--on-image); }
+a.hero__cell:focus-visible { outline: 2px solid var(--ink); outline-offset: -2px; }
+
+.hero__overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 56px 28px 24px;
+  background: linear-gradient(to top, rgba(10, 12, 10, 0.78), rgba(10, 12, 10, 0.5) 55%, transparent);
+  color: var(--on-image);
+}
+.hero__title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 1.2;
+  letter-spacing: 0.005em;
+  text-wrap: pretty;
+}
+.hero__line {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.5;
+  max-width: 420px;
+  opacity: 0.88;
+  text-wrap: pretty;
+}
+.hero__more {
+  font-family: var(--font-body);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  margin-top: 6px;
+}
+.hero__cell img { transition: transform 700ms cubic-bezier(0.2, 0, 0.2, 1); }
+
+@media (hover: hover) {
+  .hero__overlay {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 300ms ease, transform 300ms ease;
+  }
+  a.hero__cell:hover .hero__overlay,
+  a.hero__cell:focus-visible .hero__overlay {
+    opacity: 1;
+    transform: none;
+  }
+  a.hero__cell:hover img { transform: scale(1.03); }
+}
+
 /* ---- Flock (project-name canvas) ---------------------------------------- */
 
 .flock { padding: 80px var(--gutter) 0; position: relative; z-index: 1; }
@@ -1137,6 +1193,9 @@ img[data-full] { cursor: zoom-in; }
   .hero__byline { font-size: 13px; }
   .hero__caption { font-size: 18px; padding: 0 18px; }
   .hero__play { font-size: 44px; }
+  .hero__overlay { padding: 48px 20px 40px; }
+  .hero__title { font-size: 18px; }
+  .hero__line { font-size: 12.5px; }
   .hero__dots {
     display: flex;
     position: absolute;
@@ -1253,5 +1312,6 @@ img[data-full] { cursor: zoom-in; }
 
 @media (prefers-reduced-motion: reduce) {
   .hero__track { transition: none; }
+  .hero__overlay, .hero__cell img { transition: none; }
   .glow { transition: none; }
 }

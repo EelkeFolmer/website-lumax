@@ -8,35 +8,13 @@
   <div class="glow glow--green" style="width:460px;height:460px;right:-140px;bottom:-180px"></div>
 
   <div class="hero__track" data-hero-track>
-    {{- range $i, $cell := $hero.cells }}
-    <div class="hero__cell{{ if eq $cell.kind "statement" }} hero__statement{{ end }}">
-      {{- if eq $cell.kind "statement" }}
-      <div>
-        <p>{{ $cell.text }}</p>
-        <p class="hero__byline">{{ $cell.byline }}</p>
-      </div>
-      {{- else }}
-      {{ partial "figure.html" (dict "src" $cell.photo "alt" $cell.alt "fill" "520x350") }}
-      {{- with $cell.caption }}<span class="hero__caption">{{ . }}</span>{{ end }}
-      {{- if $cell.play }}<span class="hero__play" aria-hidden="true">&#9658;&#xFE0E;</span>{{ end }}
-      {{- end }}
-    </div>
+    {{- range $hero.cells }}
+    {{ partial "hero-cell.html" (dict "cell" . "dup" false) }}
     {{- end }}
 
     {{- /* First two cells repeated so the mobile carousel can loop. */ -}}
-    {{- range $i, $cell := first 2 $hero.cells }}
-    <div class="hero__cell hero__cell--dup{{ if eq $cell.kind "statement" }} hero__statement{{ end }}" aria-hidden="true">
-      {{- if eq $cell.kind "statement" }}
-      <div>
-        <p>{{ $cell.text }}</p>
-        <p class="hero__byline">{{ $cell.byline }}</p>
-      </div>
-      {{- else }}
-      {{ partial "figure.html" (dict "src" $cell.photo "alt" $cell.alt "fill" "520x350") }}
-      {{- with $cell.caption }}<span class="hero__caption">{{ . }}</span>{{ end }}
-      {{- if $cell.play }}<span class="hero__play" aria-hidden="true">&#9658;&#xFE0E;</span>{{ end }}
-      {{- end }}
-    </div>
+    {{- range first 2 $hero.cells }}
+    {{ partial "hero-cell.html" (dict "cell" . "dup" true) }}
     {{- end }}
   </div>
 
@@ -149,3 +127,37 @@
   </div>
 </div>
 {{ end }}
+
+{{- /* One hero quadrant. A cell with a `link` becomes an anchor, with an
+       overlay (title, line, "read more") that rises on hover. */ -}}
+{{ define "partials/hero-cell.html" }}
+{{- $cell := .cell -}}
+{{- $class := slice "hero__cell" -}}
+{{- if eq $cell.kind "statement" }}{{ $class = $class | append "hero__statement" }}{{ end -}}
+{{- if .dup }}{{ $class = $class | append "hero__cell--dup" }}{{ end -}}
+{{- $attrs := printf "class=%q" (delimit $class " ") -}}
+{{- if .dup }}{{ $attrs = printf "%s aria-hidden=\"true\"" $attrs }}{{ end -}}
+{{- if $cell.link }}
+<a {{ $attrs | safeHTMLAttr }} href="{{ $cell.link | relURL }}"{{ if .dup }} tabindex="-1"{{ end }}>
+{{- else }}
+<div {{ $attrs | safeHTMLAttr }}>
+{{- end }}
+  {{- if eq $cell.kind "statement" }}
+  <div>
+    <p>{{ $cell.text }}</p>
+    <p class="hero__byline">{{ $cell.byline }}</p>
+  </div>
+  {{- else }}
+  {{ partial "figure.html" (dict "src" $cell.photo "alt" $cell.alt "fill" "520x350") }}
+  {{- with $cell.caption }}<span class="hero__caption">{{ . }}</span>{{ end }}
+  {{- if $cell.play }}<span class="hero__play" aria-hidden="true">&#9658;&#xFE0E;</span>{{ end }}
+  {{- end }}
+  {{- with $cell.title }}
+  <span class="hero__overlay">
+    <span class="hero__title">{{ . }}</span>
+    {{- with $cell.line }}<span class="hero__line">{{ . }}</span>{{ end }}
+    <span class="hero__more">{{ $cell.more | default "Read the field notes" }} &rarr;</span>
+  </span>
+  {{- end }}
+{{ if $cell.link }}</a>{{ else }}</div>{{ end }}
+{{- end }}
