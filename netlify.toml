@@ -50,6 +50,16 @@
   status = 301
 
 [[redirects]]
+  from = "/themes/privacy-policy"
+  to = "/legal/"
+  status = 301
+
+[[redirects]]
+  from = "/imprint"
+  to = "/legal/"
+  status = 301
+
+[[redirects]]
   from = "/themes/*"
   to = "/#field-notes"
   status = 301
